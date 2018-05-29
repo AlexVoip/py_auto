@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Путь к sipp 
+SIPP_PATH=opt/sipp
+LIB_PATH=tests/lib
+SCRYPT_PATH=tests/scripts/smg_bugs
+
+# Библиотеки
+source $LIB_PATH/screen_lib.sh
+source $LIB_PATH/create_lib.sh
+
+# Переменные командной строки
+#EXTER_IP=192.168.118.249
+#EXTER_PORT=5060
+EXTER_IP=192.168.118.98
+EXTER_PORT=5060
+
+IP=192.168.118.10
+
+# Номера абонентов
+# Number A - SIP user
+# Number B - SIP dynamic user
+# Number C - SIP trunk user
+USER_A=700101
+
+PASS_A=$USER_A
+
+AUTH_A=$USER_A
+
+DOM_A=voip.local
+
+PORT_A=5060
+
+CONT_DOM=www.leningrad.spb.ru
+PORT_CONT=$PORT_A

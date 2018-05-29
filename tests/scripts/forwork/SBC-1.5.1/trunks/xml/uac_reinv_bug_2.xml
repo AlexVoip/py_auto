@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scenario name="uac">
+  <send><![CDATA[
+INVITE sip:[field2]@[remote_ip]:[remote_port] SIP/2.0
+Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch][pid]
+[last_From:]
+[last_To:]
+Call-ID: [call_id]
+CSeq: 1 INVITE
+Contact: <sip:[field0]@[local_ip]:[local_port];transport=[transport]>
+Content-Length: 0
+
+]]></send>
+  <recv response="500" optional="true"/>
+  <recv response="200" crlf="true"/>
+  <send><![CDATA[
+ACK sip:[field2]@[remote_ip]:[remote_port] SIP/2.0
+Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch][pid]
+From: sipp <sip:[field0]@[field1]>;tag=[call_number]
+To: sut <sip:[field2]@[field1]>[peer_tag_param]
+Call-ID: [call_id]
+CSeq: 2 ACK
+Contact: sip:[field0]@[local_ip]:[local_port]
+Max-Forwards: 70
+Content-Length: 0
+
+]]></send>
+  <send retrans="500"><![CDATA[
+BYE sip:[field2]@[remote_ip]:[remote_port] SIP/2.0
+Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch][pid]
+From: sipp <sip:[field0]@[field1]>;tag=[call_number]
+To: sut <sip:[field2]@[field1]>[peer_tag_param]
+Call-ID: [call_id]
+CSeq: 3 BYE
+Contact: sip:[field0]@[local_ip]:[local_port]
+Max-Forwards: 70
+Content-Length: 0
+
+]]></send>
+  <recv response="200" crlf="true"/>
+  <pause milliseconds="1000"/>
+  <label id="1"/>
+  <ResponseTimeRepartition value="10, 20, 30, 40, 50, 100, 150, 200"/>
+  <CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000"/>
+</scenario>

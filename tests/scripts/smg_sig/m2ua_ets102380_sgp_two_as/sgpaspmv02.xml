@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE scenario SYSTEM "sigtran.dtd">
+
+<scenario  name="m2ua_sgp_aspm_v_02">
+	<sock_open local="0" remote="1" transport="sctp" proto="m2ua" />
+	<sock_open local="2" remote="3" transport="sctp" proto="m2ua" />
+	<send socket="0" class="aspsm">
+		<![CDATA[
+		ASP UP(tag="asp identifier":[asp0])
+		]]>
+	</send>
+	<recv socket="0" class="aspsm">
+		<![CDATA[
+		ASP UP ACK()
+		]]>
+	</recv>
+	<recv socket="0" class="mgmt">
+		<![CDATA[
+		NTFY(tag="Status Type/Information":1/2)
+		]]>
+	</recv>	
+	<recv socket="2" class="mgmt">
+		<![CDATA[
+		NTFY(tag="Status Type/Information":1/2)
+		]]>
+	</recv>	
+	<send socket="0" class="aspsm">
+		<![CDATA[
+		ASP DOWN()
+		]]>
+	</send>
+	<sock_close local="0" />
+	<sock_close local="2" />
+</scenario>

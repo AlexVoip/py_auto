@@ -1,0 +1,136 @@
+<!--
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+ (c)Copyright 2006 Hewlett-Packard Development Company, LP.
+
+-->
+
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<scenario>
+
+<counter>
+  <counterdef name="transaction-counter" init="3"> </counterdef>
+</counter>
+
+<traffic>
+<send channel="channel-1">
+ <action>
+      <inc-counter name="transaction-counter"> </inc-counter>
+      <set-value name="transaction-id"
+                 format="$(transaction-counter)">
+		</set-value>
+  </action>
+   <message>
+
+       <![CDATA[MEGACO/1 Tau56
+                Reply = 18571]]>
+
+		<![CDATA[Context = - {
+		Notify = aaln/54
+	}		
+		}]]>  		  
+		
+		
+     </message>
+   </send>   
+   
+   
+<send channel="channel-1">
+ <action>
+      <inc-counter name="transaction-counter"> </inc-counter>
+      <set-value name="transaction-id"
+                 format="$(transaction-counter)">
+		</set-value>
+  </action>
+     <message>
+
+       <![CDATA[MEGACO/1 Tau56
+                Transaction = 18571]]>
+
+		<![CDATA[Context = $ {
+	Add = aaln/54 {
+		Media {
+			Stream = 1 {
+				LocalControl {
+					Mode = SendReceive
+				}
+			}
+		}
+	},
+	Add = $ {
+		Media {
+			Stream = 1 {
+				LocalControl {
+					Mode = Inactive,
+					ReservedGroup = OFF,
+					ReservedValue = ON
+				},
+				Local { 
+v=0
+s=-
+c=IN IP4 $
+t=0 0
+a=ptime:20
+m=audio $ RTP/AVP 0 8
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+
+				}
+			}
+		}
+	}
+}		
+		}]]>  		  
+     </message>
+   </send>     
+   
+ <!-- 1226 -->  
+<send channel="channel-1">
+ <action>
+      <inc-counter name="transaction-counter"> </inc-counter>
+      <set-value name="transaction-id"
+                 format="$(transaction-counter)">
+		</set-value>
+  </action>
+  <message>
+
+       <![CDATA[MEGACO/1 Tau56
+                Transaction = 18571]]>
+
+		<![CDATA[Context = 1 {
+	Modify = aaln/54 {
+		Events = 1523 {
+			al/on {
+				strict=exact
+			},
+			dd/std {
+				tl=*
+			}
+		},
+		Signals {
+			cg/dt
+		},
+		DigitMap = primary_dm
+	}
+}		
+		}]]>  		  
+		
+		
+     </message>  
+  </send>     
+   
+</traffic>
+</scenario>

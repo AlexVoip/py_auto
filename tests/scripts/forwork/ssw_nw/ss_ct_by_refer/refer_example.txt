@@ -1,0 +1,1494 @@
+
+
+Jan  7 02:51:18 tau syslog.info syslogd started: BusyBox v1.15.3
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.302)[sip]nua(0x679200): adding session usage
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.309)[sip]send 855 bytes to udp/[192.168.2.11]:5060 at 01:50:58.264786:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.311)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.312)[sip]   INVITE sip:123@192.168.2.11 SIP/2.0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.314)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKeFtF90KXS6mBa
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.316)[sip]   Max-Forwards: 70
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.317)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.319)[sip]   To: <sip:123@192.168.2.11>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.321)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.322)[sip]   CSeq: 262529 INVITE
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.324)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.326)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.327)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.329)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.330)[sip]   Min-SE: 120
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.332)[sip]   Content-Type: application/sdp
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.334)[sip]   Content-Disposition: session
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.336)[sip]   Content-Length: 265
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.338)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.339)[sip]   v=0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.341)[sip]   o=- 235708874323563724 5079263848312992791 IN IP4 192.168.2.11
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.342)[sip]   s=Session SDP
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.344)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.346)[sip]   t=0 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.347)[sip]   m=audio 35306 RTP/AVP 8 0 96
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.349)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.350)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.352)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.354)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.356)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.358)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.359)[sip]nta: sent INVITE (262529) to */192.168.2.11:5060
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.361)[sip]nua(0x679200): call state changed: init -> calling, sent offer
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.367)[sip]recv 855 bytes from udp/[192.168.2.11]:5060 at 01:50:58.320913:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.368)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.370)[sip]   INVITE sip:123@192.168.2.11 SIP/2.0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.372)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKeFtF90KXS6mBa
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.373)[sip]   Max-Forwards: 70
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.376)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.379)[sip]   To: <sip:123@192.168.2.11>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.380)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.382)[sip]   CSeq: 262529 INVITE
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.383)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.386)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.387)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.389)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.390)[sip]   Min-SE: 120
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.392)[sip]   Content-Type: application/sdp
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.393)[sip]   Content-Disposition: session
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.396)[sip]   Content-Length: 265
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.397)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.399)[sip]   v=0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.401)[sip]   o=- 235708874323563724 5079263848312992791 IN IP4 192.168.2.11
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.402)[sip]   s=Session SDP
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.404)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.406)[sip]   t=0 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.407)[sip]   m=audio 35306 RTP/AVP 8 0 96
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.409)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.410)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.412)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.414)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.416)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.417)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.419)[sip]nta: received INVITE sip:123@192.168.2.11 SIP/2.0 (CSeq 262529)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.421)[sip]nta: INVITE (262529) going to a default leg
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.430)[sip]nua(0x67b400): adding session usage
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.434)[sip]send 312 bytes to udp/[192.168.2.11]:5060 at 01:50:58.389213:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.436)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.437)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.439)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKeFtF90KXS6mBa
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.440)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.442)[sip]   To: <sip:123@192.168.2.11>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.443)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.446)[sip]   CSeq: 262529 INVITE
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.447)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.449)[sip]   Content-Length: 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.450)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.452)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.453)[sip]nta: sent 100 Trying for INVITE (262529)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.459)[sip]nua(0x67b400): call state changed: init -> received, received offer
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.481)[sip]send 537 bytes to udp/[192.168.2.11]:5060 at 01:50:58.437008:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.483)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.485)[sip]   SIP/2.0 180 Ringing
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.487)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKeFtF90KXS6mBa
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.488)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.490)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.491)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.493)[sip]   CSeq: 262529 INVITE
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.495)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.497)[sip]   RSeq: 501894041
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.498)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.500)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.501)[sip]   Require: 100rel
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.503)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.505)[sip]   Content-Length: 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.507)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.508)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.510)[sip]nta: sent 180 Ringing for INVITE (262529)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.512)[sip]nua(0x67b400): call state changed: received -> early
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.516)[sip]recv 312 bytes from udp/[192.168.2.11]:5060 at 01:50:58.471149:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.518)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.519)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.521)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKeFtF90KXS6mBa
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.522)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.525)[sip]   To: <sip:123@192.168.2.11>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.526)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.528)[sip]   CSeq: 262529 INVITE
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.530)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.532)[sip]   Content-Length: 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.533)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.535)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.537)[sip]nta: received 100 Trying for INVITE (262529)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.539)[sip]nta: 100 Trying is going to a transaction
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.543)[sip]recv 537 bytes from udp/[192.168.2.11]:5060 at 01:50:58.497542:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.545)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.547)[sip]   SIP/2.0 180 Ringing
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.548)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKeFtF90KXS6mBa
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.550)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.552)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.553)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.555)[sip]   CSeq: 262529 INVITE
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.557)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.559)[sip]   RSeq: 501894041
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.560)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.562)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.563)[sip]   Require: 100rel
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.565)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.567)[sip]   Content-Length: 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.569)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.570)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.572)[sip]nta: received 180 Ringing for INVITE (262529)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.573)[sip]nta: 180 Ringing is going to a transaction
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.575)[sip]nta: 180 Ringing with initial RSeq: 501894041 outside dialog
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.591)[sip]send 566 bytes to udp/[192.168.2.11]:5060 at 01:50:58.546496:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.592)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.595)[sip]   PRACK sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.597)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKFrK8av40pFByN
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.598)[sip]   Max-Forwards: 70
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.600)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.601)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.603)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.605)[sip]   CSeq: 262530 PRACK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.607)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.608)[sip]   RAck: 501894041 262529 INVITE
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.610)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.612)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.613)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.616)[sip]   Content-Length: 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.617)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.619)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.620)[sip]nta: sent PRACK (262530) to */192.168.2.11:5060
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.622)[sip]nua(0x679200): call state changed: calling -> proceeding
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.628)[sip]recv 566 bytes from udp/[192.168.2.11]:5060 at 01:50:58.582825:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.630)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.631)[sip]   PRACK sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.633)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKFrK8av40pFByN
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.636)[sip]   Max-Forwards: 70
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.637)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.639)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.640)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.642)[sip]   CSeq: 262530 PRACK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.644)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.646)[sip]   RAck: 501894041 262529 INVITE
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.647)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.649)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.650)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.652)[sip]   Content-Length: 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.654)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.656)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.657)[sip]nta: received PRACK sip:123@192.168.2.11:5060 SIP/2.0 (CSeq 262530)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.659)[sip]nta: PRACK (262530) is going to INVITE (262529)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.664)[sip]send 557 bytes to udp/[192.168.2.11]:5060 at 01:50:58.619379:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.666)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.667)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.669)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKFrK8av40pFByN
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.671)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.672)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.674)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.676)[sip]   CSeq: 262530 PRACK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.678)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.679)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.681)[sip]   Accept: application/sdp, multipart/mixed, application/isup
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.682)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.685)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.686)[sip]   Content-Length: 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.688)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.689)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.691)[sip]nta: sent 200 OK for PRACK (262530)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.696)[sip]recv 557 bytes from udp/[192.168.2.11]:5060 at 01:50:58.649311:
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.697)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.699)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.700)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKFrK8av40pFByN
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.702)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.704)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.706)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.707)[sip]   CSeq: 262530 PRACK
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.709)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.710)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.712)[sip]   Accept: application/sdp, multipart/mixed, application/isup
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.714)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.716)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.717)[sip]   Content-Length: 0
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.719)[sip]   
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.721)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.722)[sip]nta: received 200 OK for PRACK (262530)
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.724)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:21 tau user.notice tau: 2.13.0|(21.726)[sip]nua(0x679200): PRACK client response
+Jan  7 02:51:26 tau user.notice tau: 2.13.0|(26.694)[sip]nta: timer K fired, terminate PRACK (262530)
+Jan  7 02:51:26 tau user.notice tau: 2.13.0|(26.697)[sip]nta_outgoing_timer: 0/0 resent, 0/0 tout, 1/2 term, 1/3 free
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.384)[sip]send 816 bytes to udp/[192.168.2.11]:5060 at 01:51:05.339320:
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.386)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.387)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.389)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKeFtF90KXS6mBa
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.390)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.392)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.393)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.398)[sip]   CSeq: 262529 INVITE
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.399)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.401)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.402)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.404)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.406)[sip]   Min-SE: 120
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.408)[sip]   Content-Type: application/sdp
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.409)[sip]   Content-Disposition: session
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.411)[sip]   Content-Length: 242
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.412)[sip]   
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.415)[sip]   v=0
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.417)[sip]   o=- 7451866015893392887 8451694301097469953 IN IP4 192.168.2.11
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.419)[sip]   s=Session SDP
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.421)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.423)[sip]   t=0 0
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.425)[sip]   m=audio 35310 RTP/AVP 8 96
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.427)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.429)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.431)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.433)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.435)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.437)[sip]nta: sent 200 OK for INVITE (262529)
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.439)[sip]nua(0x67b400): call state changed: early -> completed, sent answer
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.477)[sip]recv 816 bytes from udp/[192.168.2.11]:5060 at 01:51:05.430727:
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.478)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.480)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.482)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKeFtF90KXS6mBa
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.485)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.487)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.488)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.490)[sip]   CSeq: 262529 INVITE
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.492)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.495)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.497)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.499)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.501)[sip]   Min-SE: 120
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.503)[sip]   Content-Type: application/sdp
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.505)[sip]   Content-Disposition: session
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.507)[sip]   Content-Length: 242
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.509)[sip]   
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.511)[sip]   v=0
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.513)[sip]   o=- 7451866015893392887 8451694301097469953 IN IP4 192.168.2.11
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.515)[sip]   s=Session SDP
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.517)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.519)[sip]   t=0 0
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.521)[sip]   m=audio 35310 RTP/AVP 8 96
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.523)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.526)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.528)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.530)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.532)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.533)[sip]nta: received 200 OK for INVITE (262529)
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.536)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.541)[sip]nua(0x679200): INVITE: processed SDP answer in 200 OK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.546)[sip]nua(0x679200): call state changed: proceeding -> completing, received answer
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.588)[sip]send 346 bytes to udp/[192.168.2.11]:5060 at 01:51:05.543431:
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.589)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.591)[sip]   ACK sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.592)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKg1c1cQN4Kr1gH
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.594)[sip]   Max-Forwards: 70
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.597)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.599)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.600)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.602)[sip]   CSeq: 262529 ACK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.603)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.616)[sip]   Content-Length: 0
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.618)[sip]   
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.619)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.621)[sip]nta: sent ACK (262529) to */192.168.2.11:5060
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.622)[sip]nua(0x679200): call state changed: completing -> ready
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.629)[sip]recv 346 bytes from udp/[192.168.2.11]:5060 at 01:51:05.583665:
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.631)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.635)[sip]   ACK sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.638)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKg1c1cQN4Kr1gH
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.639)[sip]   Max-Forwards: 70
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.641)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.643)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.646)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.648)[sip]   CSeq: 262529 ACK
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.649)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.651)[sip]   Content-Length: 0
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.653)[sip]   
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.656)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.658)[sip]nta: received ACK sip:123@192.168.2.11:5060 SIP/2.0 (CSeq 262529)
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.660)[sip]nta: ACK (262529) is going to INVITE (262529)
+Jan  7 02:51:28 tau user.notice tau: 2.13.0|(28.662)[sip]nua(0x67b400): call state changed: completed -> ready
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.457)[sip]send 890 bytes to udp/[192.168.2.11]:5060 at 01:51:08.412221:
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.458)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.460)[sip]   INVITE sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.461)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKHa6Sej67g1Q3c
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.463)[sip]   Max-Forwards: 70
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.466)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.467)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.469)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.470)[sip]   CSeq: 262531 INVITE
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.472)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.473)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.477)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.479)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.481)[sip]   Min-SE: 120
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.483)[sip]   Content-Type: application/sdp
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.485)[sip]   Content-Disposition: session
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.487)[sip]   Content-Length: 277
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.489)[sip]   
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.491)[sip]   v=0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.492)[sip]   o=- 235708874323563724 5079263848312992792 IN IP4 192.168.2.11
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.495)[sip]   s=Session SDP
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.497)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.499)[sip]   t=0 0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.501)[sip]   m=audio 35306 RTP/AVP 8 0 96
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.503)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.505)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.507)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.509)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.511)[sip]   a=sendonly
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.513)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.515)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.517)[sip]nta: sent INVITE (262531) to */192.168.2.11:5060
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.519)[sip]nua(0x679200): ready call updated: calling sent offer
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.525)[sip]recv 890 bytes from udp/[192.168.2.11]:5060 at 01:51:08.478336:
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.527)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.529)[sip]   INVITE sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.531)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKHa6Sej67g1Q3c
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.533)[sip]   Max-Forwards: 70
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.536)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.538)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.540)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.541)[sip]   CSeq: 262531 INVITE
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.543)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.546)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.548)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.549)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.551)[sip]   Min-SE: 120
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.553)[sip]   Content-Type: application/sdp
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.556)[sip]   Content-Disposition: session
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.558)[sip]   Content-Length: 277
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.560)[sip]   
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.561)[sip]   v=0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.563)[sip]   o=- 235708874323563724 5079263848312992792 IN IP4 192.168.2.11
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.566)[sip]   s=Session SDP
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.568)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.570)[sip]   t=0 0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.571)[sip]   m=audio 35306 RTP/AVP 8 0 96
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.573)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.576)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.578)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.580)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.582)[sip]   a=sendonly
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.583)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.586)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.588)[sip]nta: received INVITE sip:123@192.168.2.11:5060 SIP/2.0 (CSeq 262531)
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.590)[sip]nta: INVITE (262531) going to existing leg
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.598)[sip]send 330 bytes to udp/[192.168.2.11]:5060 at 01:51:08.553311:
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.599)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.601)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.603)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKHa6Sej67g1Q3c
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.606)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.608)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.609)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.611)[sip]   CSeq: 262531 INVITE
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.613)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.616)[sip]   Content-Length: 0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.618)[sip]   
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.620)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.621)[sip]nta: sent 100 Trying for INVITE (262531)
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.630)[sip]nua(0x67b400): ready call updated: received received offer
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.638)[sip]recv 330 bytes from udp/[192.168.2.11]:5060 at 01:51:08.589251:
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.639)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.641)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.643)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKHa6Sej67g1Q3c
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.646)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.648)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.650)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.651)[sip]   CSeq: 262531 INVITE
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.653)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.656)[sip]   Content-Length: 0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.658)[sip]   
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.660)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.661)[sip]nta: received 100 Trying for INVITE (262531)
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.663)[sip]nta: 100 Trying is going to a transaction
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.670)[sip]send 828 bytes to udp/[192.168.2.11]:5060 at 01:51:08.626147:
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.672)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.675)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.677)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKHa6Sej67g1Q3c
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.678)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.680)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.682)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.683)[sip]   CSeq: 262531 INVITE
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.686)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.688)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.690)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.692)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.694)[sip]   Min-SE: 120
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.697)[sip]   Content-Type: application/sdp
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.698)[sip]   Content-Disposition: session
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.700)[sip]   Content-Length: 254
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.702)[sip]   
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.705)[sip]   v=0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.707)[sip]   o=- 7451866015893392887 8451694301097469954 IN IP4 192.168.2.11
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.708)[sip]   s=Session SDP
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.710)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.712)[sip]   t=0 0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.715)[sip]   m=audio 35310 RTP/AVP 8 96
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.717)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.718)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.720)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.722)[sip]   a=recvonly
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.725)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.726)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.728)[sip]nta: sent 200 OK for INVITE (262531)
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.730)[sip]nua(0x67b400): ready call updated: completed sent answer
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.779)[sip]recv 828 bytes from udp/[192.168.2.11]:5060 at 01:51:08.732984:
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.781)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.782)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.785)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKHa6Sej67g1Q3c
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.787)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.789)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.791)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.793)[sip]   CSeq: 262531 INVITE
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.795)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.797)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.799)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.801)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.803)[sip]   Min-SE: 120
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.805)[sip]   Content-Type: application/sdp
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.807)[sip]   Content-Disposition: session
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.809)[sip]   Content-Length: 254
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.811)[sip]   
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.813)[sip]   v=0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.816)[sip]   o=- 7451866015893392887 8451694301097469954 IN IP4 192.168.2.11
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.817)[sip]   s=Session SDP
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.819)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.821)[sip]   t=0 0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.823)[sip]   m=audio 35310 RTP/AVP 8 96
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.826)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.828)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.829)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.831)[sip]   a=recvonly
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.833)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.836)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.838)[sip]nta: received 200 OK for INVITE (262531)
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.839)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.846)[sip]nua(0x679200): INVITE: processed SDP answer in 200 OK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.853)[sip]send 346 bytes to udp/[192.168.2.11]:5060 at 01:51:08.808620:
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.855)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.857)[sip]   ACK sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.859)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKjKZjgDQBeaepr
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.861)[sip]   Max-Forwards: 70
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.863)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.866)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.867)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.869)[sip]   CSeq: 262531 ACK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.871)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.873)[sip]   Content-Length: 0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.876)[sip]   
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.878)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.879)[sip]nta: sent ACK (262531) to */192.168.2.11:5060
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.881)[sip]nua(0x679200): ready call updated: ready received answer
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.950)[sip]recv 346 bytes from udp/[192.168.2.11]:5060 at 01:51:08.874071:
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.952)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.954)[sip]   ACK sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.956)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKjKZjgDQBeaepr
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.958)[sip]   Max-Forwards: 70
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.960)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.962)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.965)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.966)[sip]   CSeq: 262531 ACK
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.968)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.970)[sip]   Content-Length: 0
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.972)[sip]   
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.975)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.977)[sip]nta: received ACK sip:123@192.168.2.11:5060 SIP/2.0 (CSeq 262531)
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.979)[sip]nta: ACK (262531) is going to INVITE (262531)
+Jan  7 02:51:31 tau user.notice tau: 2.13.0|(31.981)[sip]nua(0x67b400): ready call updated: ready
+Jan  7 02:51:33 tau user.notice tau: 2.13.0|(33.634)[sip]nta: timer I fired, terminate 200 response
+Jan  7 02:51:33 tau user.notice tau: 2.13.0|(33.637)[sip]nta_incoming_timer: 0/0 resent, 0/0 tout, 1/3 term, 1/3 free
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.441)[sip]nua(0x6e4400): adding session usage
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.451)[sip]send 856 bytes to udp/[192.168.2.11]:5060 at 01:51:11.406690:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.453)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.455)[sip]   INVITE sip:125@192.168.2.11 SIP/2.0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.457)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKKvrBj87eBK48K
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.458)[sip]   Max-Forwards: 70
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.460)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.461)[sip]   To: <sip:125@192.168.2.11>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.463)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.466)[sip]   CSeq: 262535 INVITE
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.468)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.470)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.472)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.474)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.477)[sip]   Min-SE: 120
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.478)[sip]   Content-Type: application/sdp
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.480)[sip]   Content-Disposition: session
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.482)[sip]   Content-Length: 266
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.485)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.487)[sip]   v=0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.488)[sip]   o=- 2236633674293712137 4426031474930068496 IN IP4 192.168.2.11
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.490)[sip]   s=Session SDP
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.492)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.495)[sip]   t=0 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.497)[sip]   m=audio 35314 RTP/AVP 8 0 96
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.499)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.501)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.502)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.505)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.507)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.509)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.510)[sip]nta: sent INVITE (262535) to */192.168.2.11:5060
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.513)[sip]nua(0x6e4400): call state changed: init -> calling, sent offer
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.519)[sip]recv 856 bytes from udp/[192.168.2.11]:5060 at 01:51:11.472750:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.520)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.522)[sip]   INVITE sip:125@192.168.2.11 SIP/2.0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.525)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKKvrBj87eBK48K
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.526)[sip]   Max-Forwards: 70
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.528)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.530)[sip]   To: <sip:125@192.168.2.11>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.532)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.533)[sip]   CSeq: 262535 INVITE
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.537)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.539)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.540)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.542)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.545)[sip]   Min-SE: 120
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.546)[sip]   Content-Type: application/sdp
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.548)[sip]   Content-Disposition: session
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.549)[sip]   Content-Length: 266
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.551)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.553)[sip]   v=0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.556)[sip]   o=- 2236633674293712137 4426031474930068496 IN IP4 192.168.2.11
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.558)[sip]   s=Session SDP
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.560)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.561)[sip]   t=0 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.563)[sip]   m=audio 35314 RTP/AVP 8 0 96
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.566)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.568)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.570)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.572)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.573)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.576)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.578)[sip]nta: received INVITE sip:125@192.168.2.11 SIP/2.0 (CSeq 262535)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.580)[sip]nta: INVITE (262535) going to a default leg
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.590)[sip]nua(0x679700): adding session usage
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.595)[sip]send 312 bytes to udp/[192.168.2.11]:5060 at 01:51:11.549701:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.597)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.598)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.600)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKKvrBj87eBK48K
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.602)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.605)[sip]   To: <sip:125@192.168.2.11>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.606)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.608)[sip]   CSeq: 262535 INVITE
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.610)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.612)[sip]   Content-Length: 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.615)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.617)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.618)[sip]nta: sent 100 Trying for INVITE (262535)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.625)[sip]nua(0x679700): call state changed: init -> received, received offer
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.629)[sip]recv 312 bytes from udp/[192.168.2.11]:5060 at 01:51:11.584269:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.631)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.633)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.638)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKKvrBj87eBK48K
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.647)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.668)[sip]   To: <sip:125@192.168.2.11>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.675)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.676)[sip]   CSeq: 262535 INVITE
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.678)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.680)[sip]   Content-Length: 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.681)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.683)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.686)[sip]nta: received 100 Trying for INVITE (262535)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.688)[sip]nta: 100 Trying is going to a transaction
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.693)[sip]send 536 bytes to udp/[192.168.2.11]:5060 at 01:51:11.649098:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.696)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.698)[sip]   SIP/2.0 180 Ringing
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.700)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKKvrBj87eBK48K
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.702)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.703)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.706)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.708)[sip]   CSeq: 262535 INVITE
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.710)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.712)[sip]   RSeq: 73456420
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.713)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.716)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.718)[sip]   Require: 100rel
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.720)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.722)[sip]   Content-Length: 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.723)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.726)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.728)[sip]nta: sent 180 Ringing for INVITE (262535)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.730)[sip]nua(0x679700): call state changed: received -> early
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.736)[sip]recv 536 bytes from udp/[192.168.2.11]:5060 at 01:51:11.689216:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.737)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.739)[sip]   SIP/2.0 180 Ringing
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.741)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKKvrBj87eBK48K
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.743)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.746)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.748)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.749)[sip]   CSeq: 262535 INVITE
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.751)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.753)[sip]   RSeq: 73456420
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.756)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.758)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.760)[sip]   Require: 100rel
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.761)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.763)[sip]   Content-Length: 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.766)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.768)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.770)[sip]nta: received 180 Ringing for INVITE (262535)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.771)[sip]nta: 180 Ringing is going to a transaction
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.773)[sip]nta: 180 Ringing with initial RSeq: 73456420 outside dialog
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.790)[sip]send 565 bytes to udp/[192.168.2.11]:5060 at 01:51:11.746101:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.792)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.795)[sip]   PRACK sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.797)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKm5H4K3rj8UtUF
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.798)[sip]   Max-Forwards: 70
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.800)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.801)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.803)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.806)[sip]   CSeq: 262536 PRACK
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.808)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.810)[sip]   RAck: 73456420 262535 INVITE
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.812)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.814)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.816)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.818)[sip]   Content-Length: 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.820)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.822)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.824)[sip]nta: sent PRACK (262536) to */192.168.2.11:5060
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.826)[sip]nua(0x6e4400): call state changed: calling -> proceeding
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.833)[sip]recv 565 bytes from udp/[192.168.2.11]:5060 at 01:51:11.787784:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.836)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.838)[sip]   PRACK sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.840)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKm5H4K3rj8UtUF
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.842)[sip]   Max-Forwards: 70
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.843)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.846)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.848)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.850)[sip]   CSeq: 262536 PRACK
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.852)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.853)[sip]   RAck: 73456420 262535 INVITE
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.856)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.858)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.860)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.862)[sip]   Content-Length: 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.864)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.866)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.868)[sip]nta: received PRACK sip:125@192.168.2.11:5060 SIP/2.0 (CSeq 262536)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.870)[sip]nta: PRACK (262536) is going to INVITE (262535)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.876)[sip]send 557 bytes to udp/[192.168.2.11]:5060 at 01:51:11.831256:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.877)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.879)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.881)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKm5H4K3rj8UtUF
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.883)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.886)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.888)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.889)[sip]   CSeq: 262536 PRACK
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.891)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.893)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.896)[sip]   Accept: application/sdp, multipart/mixed, application/isup
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.898)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.900)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.902)[sip]   Content-Length: 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.903)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.906)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.908)[sip]nta: sent 200 OK for PRACK (262536)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.912)[sip]recv 557 bytes from udp/[192.168.2.11]:5060 at 01:51:11.866627:
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.915)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.916)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.918)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKm5H4K3rj8UtUF
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.919)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.921)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.923)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.926)[sip]   CSeq: 262536 PRACK
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.928)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.929)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.931)[sip]   Accept: application/sdp, multipart/mixed, application/isup
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.933)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.936)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.938)[sip]   Content-Length: 0
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.940)[sip]   
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.942)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.943)[sip]nta: received 200 OK for PRACK (262536)
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.946)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:34 tau user.notice tau: 2.13.0|(34.948)[sip]nua(0x6e4400): PRACK client response
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.464)[sip]send 816 bytes to udp/[192.168.2.11]:5060 at 01:51:12.419221:
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.467)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.468)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.470)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKKvrBj87eBK48K
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.471)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.473)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.478)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.481)[sip]   CSeq: 262535 INVITE
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.482)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.484)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.486)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.488)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.489)[sip]   Min-SE: 120
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.491)[sip]   Content-Type: application/sdp
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.493)[sip]   Content-Disposition: session
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.496)[sip]   Content-Length: 242
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.497)[sip]   
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.499)[sip]   v=0
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.500)[sip]   o=- 4706883654155431517 7360428309996094246 IN IP4 192.168.2.11
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.502)[sip]   s=Session SDP
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.503)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.506)[sip]   t=0 0
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.508)[sip]   m=audio 35318 RTP/AVP 8 96
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.509)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.511)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.512)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.515)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.517)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.518)[sip]nta: sent 200 OK for INVITE (262535)
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.521)[sip]nua(0x679700): call state changed: early -> completed, sent answer
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.536)[sip]recv 816 bytes from udp/[192.168.2.11]:5060 at 01:51:12.479525:
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.551)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.553)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.555)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKKvrBj87eBK48K
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.557)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.559)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.561)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.563)[sip]   CSeq: 262535 INVITE
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.566)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.568)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.569)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.571)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.573)[sip]   Min-SE: 120
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.576)[sip]   Content-Type: application/sdp
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.578)[sip]   Content-Disposition: session
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.580)[sip]   Content-Length: 242
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.582)[sip]   
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.583)[sip]   v=0
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.586)[sip]   o=- 4706883654155431517 7360428309996094246 IN IP4 192.168.2.11
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.588)[sip]   s=Session SDP
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.590)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.592)[sip]   t=0 0
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.593)[sip]   m=audio 35318 RTP/AVP 8 96
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.596)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.598)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.600)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.602)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.604)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.606)[sip]nta: received 200 OK for INVITE (262535)
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.608)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.613)[sip]nua(0x6e4400): INVITE: processed SDP answer in 200 OK
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.618)[sip]nua(0x6e4400): call state changed: proceeding -> completing, received answer
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.628)[sip]send 346 bytes to udp/[192.168.2.11]:5060 at 01:51:12.583829:
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.630)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.632)[sip]   ACK sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.634)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKNeBXNy9N54geB
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.636)[sip]   Max-Forwards: 70
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.638)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.640)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.642)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.643)[sip]   CSeq: 262535 ACK
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.646)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.648)[sip]   Content-Length: 0
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.650)[sip]   
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.651)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.653)[sip]nta: sent ACK (262535) to */192.168.2.11:5060
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.656)[sip]nua(0x6e4400): call state changed: completing -> ready
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.660)[sip]recv 346 bytes from udp/[192.168.2.11]:5060 at 01:51:12.615217:
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.662)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.665)[sip]   ACK sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.666)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKNeBXNy9N54geB
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.668)[sip]   Max-Forwards: 70
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.669)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.671)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.672)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.674)[sip]   CSeq: 262535 ACK
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.677)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.679)[sip]   Content-Length: 0
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.681)[sip]   
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.683)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.685)[sip]nta: received ACK sip:125@192.168.2.11:5060 SIP/2.0 (CSeq 262535)
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.687)[sip]nta: ACK (262535) is going to INVITE (262535)
+Jan  7 02:51:35 tau user.notice tau: 2.13.0|(35.690)[sip]nua(0x679700): call state changed: completed -> ready
+Jan  7 02:51:36 tau user.notice tau: 2.13.0|(36.924)[sip]nta: timer I fired, terminate 200 response
+Jan  7 02:51:36 tau user.notice tau: 2.13.0|(36.927)[sip]nta_incoming_timer: 0/0 resent, 0/0 tout, 1/4 term, 1/4 free
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.625)[sip]send 891 bytes to udp/[192.168.2.11]:5060 at 01:51:15.579894:
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.626)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.628)[sip]   INVITE sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.629)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKpQ4NQStS2D70p
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.631)[sip]   Max-Forwards: 70
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.633)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.636)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.637)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.639)[sip]   CSeq: 262537 INVITE
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.640)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.642)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.643)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.646)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.648)[sip]   Min-SE: 120
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.649)[sip]   Content-Type: application/sdp
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.651)[sip]   Content-Disposition: session
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.653)[sip]   Content-Length: 278
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.656)[sip]   
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.657)[sip]   v=0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.659)[sip]   o=- 2236633674293712137 4426031474930068497 IN IP4 192.168.2.11
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.660)[sip]   s=Session SDP
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.662)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.663)[sip]   t=0 0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.666)[sip]   m=audio 35314 RTP/AVP 8 0 96
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.668)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.669)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.671)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.672)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.675)[sip]   a=sendonly
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.677)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.679)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.680)[sip]nta: sent INVITE (262537) to */192.168.2.11:5060
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.682)[sip]nua(0x6e4400): ready call updated: calling sent offer
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.688)[sip]recv 891 bytes from udp/[192.168.2.11]:5060 at 01:51:15.642428:
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.690)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.692)[sip]   INVITE sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.693)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKpQ4NQStS2D70p
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.696)[sip]   Max-Forwards: 70
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.698)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.699)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.701)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.702)[sip]   CSeq: 262537 INVITE
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.705)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.707)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.708)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.710)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.712)[sip]   Min-SE: 120
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.713)[sip]   Content-Type: application/sdp
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.716)[sip]   Content-Disposition: session
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.718)[sip]   Content-Length: 278
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.719)[sip]   
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.721)[sip]   v=0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.722)[sip]   o=- 2236633674293712137 4426031474930068497 IN IP4 192.168.2.11
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.725)[sip]   s=Session SDP
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.727)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.729)[sip]   t=0 0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.731)[sip]   m=audio 35314 RTP/AVP 8 0 96
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.733)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.736)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.738)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.740)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.741)[sip]   a=sendonly
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.743)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.746)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.748)[sip]nta: received INVITE sip:125@192.168.2.11:5060 SIP/2.0 (CSeq 262537)
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.750)[sip]nta: INVITE (262537) going to existing leg
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.759)[sip]send 330 bytes to udp/[192.168.2.11]:5060 at 01:51:15.714323:
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.767)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.769)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.770)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKpQ4NQStS2D70p
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.772)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.775)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.777)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.778)[sip]   CSeq: 262537 INVITE
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.780)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.781)[sip]   Content-Length: 0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.783)[sip]   
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.786)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.788)[sip]nta: sent 100 Trying for INVITE (262537)
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.797)[sip]nua(0x679700): ready call updated: received received offer
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.802)[sip]recv 330 bytes from udp/[192.168.2.11]:5060 at 01:51:15.756653:
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.804)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.808)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.810)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKpQ4NQStS2D70p
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.812)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.815)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.817)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.818)[sip]   CSeq: 262537 INVITE
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.820)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.822)[sip]   Content-Length: 0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.825)[sip]   
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.827)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.828)[sip]nta: received 100 Trying for INVITE (262537)
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.830)[sip]nta: 100 Trying is going to a transaction
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.837)[sip]send 828 bytes to udp/[192.168.2.11]:5060 at 01:51:15.793069:
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.839)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.841)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.843)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKpQ4NQStS2D70p
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.846)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.848)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.849)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.851)[sip]   CSeq: 262537 INVITE
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.853)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.856)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.858)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.860)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.862)[sip]   Min-SE: 120
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.863)[sip]   Content-Type: application/sdp
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.866)[sip]   Content-Disposition: session
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.868)[sip]   Content-Length: 254
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.870)[sip]   
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.872)[sip]   v=0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.874)[sip]   o=- 4706883654155431517 7360428309996094247 IN IP4 192.168.2.11
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.876)[sip]   s=Session SDP
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.878)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.880)[sip]   t=0 0
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.882)[sip]   m=audio 35318 RTP/AVP 8 96
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.884)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.886)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.888)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.890)[sip]   a=recvonly
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.892)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.894)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.897)[sip]nta: sent 200 OK for INVITE (262537)
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.899)[sip]nua(0x679700): ready call updated: completed sent answer
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.929)[sip]recv 828 bytes from udp/[192.168.2.11]:5060 at 01:51:15.866846:
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.944)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.959)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.975)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKpQ4NQStS2D70p
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.985)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.987)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.988)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.990)[sip]   CSeq: 262537 INVITE
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.991)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:38 tau user.notice tau: 2.13.0|(38.993)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.000)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.002)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.004)[sip]   Min-SE: 120
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.006)[sip]   Content-Type: application/sdp
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.008)[sip]   Content-Disposition: session
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.010)[sip]   Content-Length: 254
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.012)[sip]   
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.014)[sip]   v=0
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.016)[sip]   o=- 4706883654155431517 7360428309996094247 IN IP4 192.168.2.11
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.018)[sip]   s=Session SDP
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.020)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.022)[sip]   t=0 0
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.024)[sip]   m=audio 35318 RTP/AVP 8 96
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.026)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.028)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.030)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.032)[sip]   a=recvonly
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.034)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.036)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.038)[sip]nta: received 200 OK for INVITE (262537)
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.040)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.046)[sip]nua(0x6e4400): INVITE: processed SDP answer in 200 OK
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.053)[sip]send 346 bytes to udp/[192.168.2.11]:5060 at 01:51:16.009144:
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.056)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.058)[sip]   ACK sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.060)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKQ0XeSmBXZpXKj
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.062)[sip]   Max-Forwards: 70
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.063)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.066)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.068)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.070)[sip]   CSeq: 262537 ACK
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.072)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.073)[sip]   Content-Length: 0
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.076)[sip]   
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.078)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.080)[sip]nta: sent ACK (262537) to */192.168.2.11:5060
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.082)[sip]nua(0x6e4400): ready call updated: ready received answer
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.089)[sip]recv 346 bytes from udp/[192.168.2.11]:5060 at 01:51:16.044112:
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.091)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.093)[sip]   ACK sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.096)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKQ0XeSmBXZpXKj
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.098)[sip]   Max-Forwards: 70
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.100)[sip]   From: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.102)[sip]   To: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.104)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.106)[sip]   CSeq: 262537 ACK
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.108)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.110)[sip]   Content-Length: 0
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.112)[sip]   
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.113)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.116)[sip]nta: received ACK sip:125@192.168.2.11:5060 SIP/2.0 (CSeq 262537)
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.118)[sip]nta: ACK (262537) is going to INVITE (262537)
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.120)[sip]nua(0x679700): ready call updated: ready
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.914)[sip]nta: timer K fired, terminate PRACK (262536)
+Jan  7 02:51:39 tau user.notice tau: 2.13.0|(39.917)[sip]nta_outgoing_timer: 0/0 resent, 0/4 tout, 1/6 term, 1/10 free
+Jan  7 02:51:40 tau user.notice tau: 2.13.0|(40.324)[sip]nta: timer D fired, terminate INVITE (262522)
+Jan  7 02:51:40 tau user.notice tau: 2.13.0|(40.327)[sip]nta_outgoing_timer: 0/0 resent, 0/4 tout, 1/5 term, 1/9 free
+Jan  7 02:51:40 tau user.notice tau: 2.13.0|(40.664)[sip]nta: timer I fired, terminate 200 response
+Jan  7 02:51:40 tau user.notice tau: 2.13.0|(40.667)[sip]nta_incoming_timer: 0/0 resent, 0/0 tout, 1/4 term, 1/4 free
+Jan  7 02:51:44 tau user.notice tau: 2.13.0|(44.094)[sip]nta: timer I fired, terminate 200 response
+Jan  7 02:51:44 tau user.notice tau: 2.13.0|(44.097)[sip]nta_incoming_timer: 0/0 resent, 0/0 tout, 1/3 term, 1/3 free
+Jan  7 02:51:48 tau user.notice tau: 2.13.0|(48.997)[sip]nua(0x679200): adding subscribe usage with event refer
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.001)[sip]send 708 bytes to udp/[192.168.2.11]:5060 at 01:51:25.956372:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.002)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.004)[sip]   REFER sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.098)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKr9p7tFv0vZK6D
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.105)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.107)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.108)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.110)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.111)[sip]   CSeq: 262532 REFER
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.113)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.115)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.117)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.118)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.120)[sip]   Refer-To: <sip:125@192.168.2.11:5060?Replaces=68808b8e-75da-122d-5abb-a8f94b01aa02%3Bto-tag%3DrS4HatUeQtFUa%3Bfrom-tag%3DQgBS8yaBtHS8e>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.121)[sip]   Referred-By: <sip:124@192.168.2.2>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.123)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.125)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.126)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.128)[sip]nta: sent REFER (262532) to */192.168.2.11:5060
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.133)[sip]recv 708 bytes from udp/[192.168.2.11]:5060 at 01:51:26.086768:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.135)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.136)[sip]   REFER sip:123@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.138)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKr9p7tFv0vZK6D
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.139)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.141)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.143)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.145)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.147)[sip]   CSeq: 262532 REFER
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.148)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.150)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.151)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.153)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.155)[sip]   Refer-To: <sip:125@192.168.2.11:5060?Replaces=68808b8e-75da-122d-5abb-a8f94b01aa02%3Bto-tag%3DrS4HatUeQtFUa%3Bfrom-tag%3DQgBS8yaBtHS8e>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.157)[sip]   Referred-By: <sip:124@192.168.2.2>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.158)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.160)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.161)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.163)[sip]nta: received REFER sip:123@192.168.2.11:5060 SIP/2.0 (CSeq 262532)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.166)[sip]nta: REFER (262532) going to existing leg
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.168)[sip]nua(0x67b400): adding notify usage with event refer
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.172)[sip]send 503 bytes to udp/[192.168.2.11]:5060 at 01:51:26.127513:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.173)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.176)[sip]   SIP/2.0 202 Accepted
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.177)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKr9p7tFv0vZK6D
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.179)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.180)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.182)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.184)[sip]   CSeq: 262532 REFER
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.186)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.187)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.189)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.191)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.192)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.194)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.196)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.198)[sip]nta: sent 202 Accepted for REFER (262532)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.218)[sip]recv 503 bytes from udp/[192.168.2.11]:5060 at 01:51:26.172465:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.219)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.221)[sip]   SIP/2.0 202 Accepted
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.223)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKr9p7tFv0vZK6D
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.225)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.227)[sip]   To: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.228)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.230)[sip]   CSeq: 262532 REFER
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.231)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.233)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.235)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.237)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.238)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.240)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.241)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.243)[sip]nta: received 202 Accepted for REFER (262532)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.245)[sip]nta: 202 Accepted is going to a transaction
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.252)[sip]send 600 bytes to udp/[192.168.2.11]:5060 at 01:51:26.207574:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.254)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.256)[sip]   NOTIFY sip:124@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.257)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKSjg0vaD4S89rS
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.259)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.261)[sip]   From: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.262)[sip]   To: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.264)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.266)[sip]   CSeq: 262543 NOTIFY
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.267)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.269)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.271)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.272)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.274)[sip]   Event: refer;id=262532
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.276)[sip]   Subscription-State: active;expires=60
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.278)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.279)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.281)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.282)[sip]nta: sent NOTIFY (262543) to */192.168.2.11:5060
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.289)[sip]nua(0x678d00): adding session usage
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.296)[sip]send 989 bytes to udp/[192.168.2.11]:5060 at 01:51:26.251422:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.297)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.299)[sip]   INVITE sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.300)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKtU9ry5X7pH0BN
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.302)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.303)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.306)[sip]   To: <sip:125@192.168.2.11>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.307)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.309)[sip]   CSeq: 262543 INVITE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.310)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.312)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.313)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.316)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.317)[sip]   Referred-By: <sip:124@192.168.2.2>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.319)[sip]   Replaces: 68808b8e-75da-122d-5abb-a8f94b01aa02;to-tag=rS4HatUeQtFUa;from-tag=QgBS8yaBtHS8e
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.320)[sip]   Min-SE: 120
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.322)[sip]   Content-Type: application/sdp
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.323)[sip]   Content-Disposition: session
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.326)[sip]   Content-Length: 266
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.327)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.329)[sip]   v=0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.330)[sip]   o=- 6205473890130485646 6562477148533817755 IN IP4 192.168.2.11
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.332)[sip]   s=Session SDP
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.333)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.338)[sip]   t=0 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.340)[sip]   m=audio 35322 RTP/AVP 8 0 96
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.341)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.343)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.345)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.346)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.348)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.349)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.351)[sip]nta: sent INVITE (262543) to */192.168.2.11:5060
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.353)[sip]nua(0x678d00): call state changed: init -> calling, sent offer
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.359)[sip]recv 600 bytes from udp/[192.168.2.11]:5060 at 01:51:26.313090:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.360)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.362)[sip]   NOTIFY sip:124@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.363)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKSjg0vaD4S89rS
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.366)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.367)[sip]   From: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.369)[sip]   To: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.370)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.372)[sip]   CSeq: 262543 NOTIFY
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.373)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.376)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.377)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.379)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.380)[sip]   Event: refer;id=262532
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.382)[sip]   Subscription-State: active;expires=60
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.383)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.386)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.387)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.389)[sip]nta: received NOTIFY sip:124@192.168.2.11:5060 SIP/2.0 (CSeq 262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.391)[sip]nta: NOTIFY (262543) going to existing leg
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.393)[sip]nua(0x679200): nua_notify_server_preprocess: active ()
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.397)[sip]send 498 bytes to udp/[192.168.2.11]:5060 at 01:51:26.352931:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.399)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.400)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.402)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKSjg0vaD4S89rS
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.403)[sip]   From: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.406)[sip]   To: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.407)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.409)[sip]   CSeq: 262543 NOTIFY
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.411)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.412)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.414)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.416)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.417)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.419)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.421)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.422)[sip]nta: sent 200 OK for NOTIFY (262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.428)[sip]recv 989 bytes from udp/[192.168.2.11]:5060 at 01:51:26.381426:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.429)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.430)[sip]   INVITE sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.432)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKtU9ry5X7pH0BN
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.434)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.436)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.437)[sip]   To: <sip:125@192.168.2.11>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.439)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.440)[sip]   CSeq: 262543 INVITE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.442)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.444)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.446)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.447)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.449)[sip]   Referred-By: <sip:124@192.168.2.2>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.451)[sip]   Replaces: 68808b8e-75da-122d-5abb-a8f94b01aa02;to-tag=rS4HatUeQtFUa;from-tag=QgBS8yaBtHS8e
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.452)[sip]   Min-SE: 120
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.454)[sip]   Content-Type: application/sdp
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.456)[sip]   Content-Disposition: session
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.457)[sip]   Content-Length: 266
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.459)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.460)[sip]   v=0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.462)[sip]   o=- 6205473890130485646 6562477148533817755 IN IP4 192.168.2.11
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.464)[sip]   s=Session SDP
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.466)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.467)[sip]   t=0 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.469)[sip]   m=audio 35322 RTP/AVP 8 0 96
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.470)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.472)[sip]   a=rtpmap:0 PCMU/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.473)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.476)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.477)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.479)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.480)[sip]nta: received INVITE sip:125@192.168.2.11:5060 SIP/2.0 (CSeq 262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.482)[sip]nta: INVITE (262543) going to a default leg
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.491)[sip]nua(0x67fd00): adding session usage
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.496)[sip]send 312 bytes to udp/[192.168.2.11]:5060 at 01:51:26.451845:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.498)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.499)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.501)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKtU9ry5X7pH0BN
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.502)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.504)[sip]   To: <sip:125@192.168.2.11>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.506)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.508)[sip]   CSeq: 262543 INVITE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.509)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.511)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.512)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.514)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.516)[sip]nta: sent 100 Trying for INVITE (262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.521)[sip]nua(0x67fd00): call state changed: init -> received, received offer
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.545)[sip]send 583 bytes to udp/[192.168.2.11]:5060 at 01:51:26.500837:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.547)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.548)[sip]   BYE sip:124@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.550)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKU42H00eBmtpyg
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.551)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.553)[sip]   From: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.587)[sip]   To: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.590)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.592)[sip]   CSeq: 262543 BYE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.593)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.596)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.598)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.599)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.601)[sip]   Reason: Q.850;cause=16;text="Normal call clearing"
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.603)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.606)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.607)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.609)[sip]nta: sent BYE (262543) to */192.168.2.11:5060
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.616)[sip]send 816 bytes to udp/[192.168.2.11]:5060 at 01:51:26.572065:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.618)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.619)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.621)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKtU9ry5X7pH0BN
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.622)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.625)[sip]   To: <sip:125@192.168.2.11>;tag=S2XacNcjm35Dp
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.627)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.629)[sip]   CSeq: 262543 INVITE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.630)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.632)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.633)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.636)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.638)[sip]   Min-SE: 120
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.639)[sip]   Content-Type: application/sdp
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.641)[sip]   Content-Disposition: session
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.642)[sip]   Content-Length: 242
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.644)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.647)[sip]   v=0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.649)[sip]   o=- 8963302443204306051 8904606429554505722 IN IP4 192.168.2.11
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.651)[sip]   s=Session SDP
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.653)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.655)[sip]   t=0 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.657)[sip]   m=audio 35326 RTP/AVP 8 96
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.659)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.661)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.663)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.665)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.667)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.669)[sip]nta: sent 200 OK for INVITE (262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.671)[sip]nua(0x67fd00): call state changed: received -> completed, sent answer
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.688)[sip]recv 498 bytes from udp/[192.168.2.11]:5060 at 01:51:26.642835:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.690)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.692)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.694)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKSjg0vaD4S89rS
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.716)[sip]   From: <sip:123@192.168.2.11>;tag=p7H063S7v82NK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.718)[sip]   To: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.720)[sip]   Call-ID: 60abb56d-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.722)[sip]   CSeq: 262543 NOTIFY
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.724)[sip]   Contact: <sip:124@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.726)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.728)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.730)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.732)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.735)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.737)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.738)[sip]nta: received 200 OK for NOTIFY (262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.740)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.746)[sip]recv 312 bytes from udp/[192.168.2.11]:5060 at 01:51:26.699841:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.747)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.749)[sip]   SIP/2.0 100 Trying
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.751)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKtU9ry5X7pH0BN
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.753)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.756)[sip]   To: <sip:125@192.168.2.11>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.758)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.759)[sip]   CSeq: 262543 INVITE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.761)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.763)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.766)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.768)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.770)[sip]nta: received 100 Trying for INVITE (262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.772)[sip]nta: 100 Trying is going to a transaction
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.777)[sip]recv 583 bytes from udp/[192.168.2.11]:5060 at 01:51:26.731684:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.779)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.781)[sip]   BYE sip:124@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.783)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKU42H00eBmtpyg
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.786)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.788)[sip]   From: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.790)[sip]   To: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.792)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.793)[sip]   CSeq: 262543 BYE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.796)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.798)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.800)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.802)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.804)[sip]   Reason: Q.850;cause=16;text="Normal call clearing"
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.807)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.809)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.810)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.812)[sip]nta: received BYE sip:124@192.168.2.11:5060 SIP/2.0 (CSeq 262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.815)[sip]nta: BYE (262543) going to existing leg
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.820)[sip]send 457 bytes to udp/[192.168.2.11]:5060 at 01:51:26.775954:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.822)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.823)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.827)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKU42H00eBmtpyg
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.829)[sip]   From: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.831)[sip]   To: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.832)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.835)[sip]   CSeq: 262543 BYE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.837)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.838)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.840)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.841)[sip]   Content-Length: 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.843)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.846)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.848)[sip]nta: sent 200 OK for BYE (262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.850)[sip]nua(0x6e4400): removing session usage
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.852)[sip]nua(0x6e4400): call state changed: ready -> terminated
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.861)[sip]recv 816 bytes from udp/[192.168.2.11]:5060 at 01:51:26.814861:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.863)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.865)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.867)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKtU9ry5X7pH0BN
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.869)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.871)[sip]   To: <sip:125@192.168.2.11>;tag=S2XacNcjm35Dp
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.873)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.876)[sip]   CSeq: 262543 INVITE
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.877)[sip]   Contact: <sip:125@192.168.2.11:5060>
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.879)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.881)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.883)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.886)[sip]   Min-SE: 120
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.888)[sip]   Content-Type: application/sdp
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.890)[sip]   Content-Disposition: session
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.892)[sip]   Content-Length: 242
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.893)[sip]   
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.896)[sip]   v=0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.898)[sip]   o=- 8963302443204306051 8904606429554505722 IN IP4 192.168.2.11
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.900)[sip]   s=Session SDP
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.902)[sip]   c=IN IP4 192.168.2.11
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.904)[sip]   t=0 0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.907)[sip]   m=audio 35326 RTP/AVP 8 96
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.908)[sip]   a=rtpmap:8 PCMA/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.910)[sip]   a=rtpmap:96 telephone-event/8000
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.912)[sip]   a=fmtp:96 0-16
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.915)[sip]   a=silenceSupp:off - - - -
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.917)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.918)[sip]nta: received 200 OK for INVITE (262543)
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.920)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.926)[sip]nua(0x678d00): INVITE: processed SDP answer in 200 OK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.930)[sip]nua(0x678d00): call state changed: calling -> completing, received answer
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.976)[sip]send 382 bytes to udp/[192.168.2.11]:5060 at 01:51:26.932143:
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.978)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.980)[sip]   ACK sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.982)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKvDva2UZeH3cHc
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.984)[sip]   Max-Forwards: 70
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.989)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.992)[sip]   To: <sip:125@192.168.2.11>;tag=S2XacNcjm35Dp
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.995)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.997)[sip]   CSeq: 262543 ACK
+Jan  7 02:51:49 tau user.notice tau: 2.13.0|(49.999)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.001)[sip]   Referred-By: <sip:124@192.168.2.2>
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.002)[sip]   Content-Length: 0
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.081)[sip]   
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.082)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.085)[sip]nta: sent ACK (262543) to */192.168.2.11:5060
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.087)[sip]nua(0x678d00): call state changed: completing -> ready
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.092)[sip]recv 457 bytes from udp/[192.168.2.11]:5060 at 01:51:27.046553:
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.094)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.096)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.098)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKU42H00eBmtpyg
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.100)[sip]   From: <sip:125@192.168.2.11>;tag=rS4HatUeQtFUa
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.102)[sip]   To: "124" <sip:124@192.168.2.11>;tag=QgBS8yaBtHS8e
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.105)[sip]   Call-ID: 68808b8e-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.107)[sip]   CSeq: 262543 BYE
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.108)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.110)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.112)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.115)[sip]   Content-Length: 0
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.117)[sip]   
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.118)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.120)[sip]nta: received 200 OK for BYE (262543)
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.122)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.126)[sip]nua(0x679700): call state changed: terminating -> terminated
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.130)[sip]nua(0x679700): removing session usage
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.133)[sip]nua: terminated session 0x679700
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.138)[sip]recv 382 bytes from udp/[192.168.2.11]:5060 at 01:51:27.092614:
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.140)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.142)[sip]   ACK sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.143)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKvDva2UZeH3cHc
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.146)[sip]   Max-Forwards: 70
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.148)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.150)[sip]   To: <sip:125@192.168.2.11>;tag=S2XacNcjm35Dp
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.152)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.154)[sip]   CSeq: 262543 ACK
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.156)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.158)[sip]   Referred-By: <sip:124@192.168.2.2>
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.160)[sip]   Content-Length: 0
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.162)[sip]   
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.164)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.166)[sip]nta: received ACK sip:125@192.168.2.11:5060 SIP/2.0 (CSeq 262543)
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.168)[sip]nta: ACK (262543) is going to INVITE (262543)
+Jan  7 02:51:50 tau user.notice tau: 2.13.0|(50.171)[sip]nua(0x67fd00): call state changed: completed -> ready
+Jan  7 02:51:53 tau user.notice tau: 2.13.0|(53.634)[sip]nta: timer J fired, terminate 200 response
+Jan  7 02:51:53 tau user.notice tau: 2.13.0|(53.637)[sip]nta_incoming_timer: 0/0 resent, 0/0 tout, 1/6 term, 1/6 free
+Jan  7 02:51:54 tau user.notice tau: 2.13.0|(54.224)[sip]nta: timer K fired, terminate REFER (262532)
+Jan  7 02:51:54 tau user.notice tau: 2.13.0|(54.227)[sip]nta_outgoing_timer: 0/0 resent, 0/5 tout, 1/8 term, 1/13 free
+Jan  7 02:51:54 tau user.notice tau: 2.13.0|(54.694)[sip]nta: timer K fired, terminate NOTIFY (262543)
+Jan  7 02:51:54 tau user.notice tau: 2.13.0|(54.697)[sip]nta_outgoing_timer: 0/0 resent, 0/5 tout, 1/7 term, 1/12 free
+Jan  7 02:51:55 tau user.notice tau: 2.13.0|(55.094)[sip]nta: timer K fired, terminate BYE (262543)
+Jan  7 02:51:55 tau user.notice tau: 2.13.0|(55.097)[sip]nta_outgoing_timer: 0/0 resent, 0/5 tout, 1/6 term, 1/11 free
+Jan  7 02:51:55 tau user.notice tau: 2.13.0|(55.144)[sip]nta: timer I fired, terminate 200 response
+Jan  7 02:51:55 tau user.notice tau: 2.13.0|(55.147)[sip]nta_incoming_timer: 0/0 resent, 0/0 tout, 1/5 term, 1/5 free
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.882)[sip]send 619 bytes to udp/[192.168.2.11]:5060 at 01:51:35.837251:
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.883)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.885)[sip]   BYE sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.887)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKXpN33pgjec33Q
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.889)[sip]   Max-Forwards: 70
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.890)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.892)[sip]   To: <sip:125@192.168.2.11>;tag=S2XacNcjm35Dp
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.893)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.896)[sip]   CSeq: 262544 BYE
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.897)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.899)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.900)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.902)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.903)[sip]   Referred-By: <sip:124@192.168.2.2>
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.905)[sip]   Reason: Q.850;cause=16;text="Normal call clearing"
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.907)[sip]   Content-Length: 0
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.909)[sip]   
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.910)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.911)[sip]nta: sent BYE (262544) to */192.168.2.11:5060
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.916)[sip]recv 619 bytes from udp/[192.168.2.11]:5060 at 01:51:35.869636:
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.918)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.919)[sip]   BYE sip:125@192.168.2.11:5060 SIP/2.0
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.921)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport;branch=z9hG4bKXpN33pgjec33Q
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.922)[sip]   Max-Forwards: 70
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.924)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.926)[sip]   To: <sip:125@192.168.2.11>;tag=S2XacNcjm35Dp
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.928)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.929)[sip]   CSeq: 262544 BYE
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.931)[sip]   Contact: <sip:123@192.168.2.11:5060>
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.932)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.934)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.936)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.938)[sip]   Referred-By: <sip:124@192.168.2.2>
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.939)[sip]   Reason: Q.850;cause=16;text="Normal call clearing"
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.941)[sip]   Content-Length: 0
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.942)[sip]   
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.944)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.946)[sip]nta: received BYE sip:125@192.168.2.11:5060 SIP/2.0 (CSeq 262544)
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.948)[sip]nta: BYE (262544) going to existing leg
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.953)[sip]send 457 bytes to udp/[192.168.2.11]:5060 at 01:51:35.908977:
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.955)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.957)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.958)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKXpN33pgjec33Q
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.960)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.962)[sip]   To: <sip:125@192.168.2.11>;tag=S2XacNcjm35Dp
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.963)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.965)[sip]   CSeq: 262544 BYE
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.967)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.969)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.970)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.972)[sip]   Content-Length: 0
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.973)[sip]   
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.975)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.977)[sip]nta: sent 200 OK for BYE (262544)
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.978)[sip]nua(0x67fd00): removing session usage
+Jan  7 02:51:58 tau user.notice tau: 2.13.0|(58.980)[sip]nua(0x67fd00): call state changed: ready -> terminated
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.000)[sip]recv 457 bytes from udp/[192.168.2.11]:5060 at 01:51:35.954918:
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.002)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.084)[sip]   SIP/2.0 200 OK
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.086)[sip]   Via: SIP/2.0/UDP 192.168.2.11;rport=5060;branch=z9hG4bKXpN33pgjec33Q
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.088)[sip]   From: "124" <sip:124@192.168.2.11>;tag=Nyr74883ZZc3Q
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.089)[sip]   To: <sip:125@192.168.2.11>;tag=S2XacNcjm35Dp
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.091)[sip]   Call-ID: 715a271a-75da-122d-5abb-a8f94b01aa02
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.092)[sip]   CSeq: 262544 BYE
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.094)[sip]   User-Agent: TAU-72 build 2.13.0 sofia-sip/1.12.10
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.096)[sip]   Allow: INVITE, ACK, BYE, CANCEL, OPTIONS, PRACK, MESSAGE, SUBSCRIBE, NOTIFY, REFER, UPDATE, INFO
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.098)[sip]   Supported: timer, 100rel, replaces
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.099)[sip]   Content-Length: 0
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.101)[sip]   
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.102)[sip]   ------------------------------------------------------------------------
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.104)[sip]nta: received 200 OK for BYE (262544)
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.106)[sip]nta: 200 OK is going to a transaction
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.108)[sip]nua(0x678d00): call state changed: terminating -> terminated
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.110)[sip]nua(0x678d00): removing session usage
+Jan  7 02:51:59 tau user.notice tau: 2.13.0|(59.112)[sip]nua: terminated session 0x678d00
+Jan  7 02:52:00 tau syslog.info syslogd exiting
+
+

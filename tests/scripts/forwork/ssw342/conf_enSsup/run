@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Configure supplServices permissions. Версия ПО 3.4.2
+
+# Переменные командной строки
+# $DEV_USER SSW_cocon_user
+# $DEV_PASS SSW_cocon_password
+# $DEV_DOMAIN SSW_domain
+# $EXTER_IP SSW_IP_address
+# $DS_NAME ds name
+
+. tests/scripts/ssw342/conf
+
+# Путь к скриптам
+ROOT_DIR=$(pwd)
+SRC_PATH=$ROOT_DIR/tests/scripts/ssw342/conf_enSsup
+create_dir log/ssw342_configure_ss_perm
+LOG_PATH=log/ssw342_configure_ss_perm
+
+create_file $LOG_PATH/log.txt
+
+# Путь к sipp
+#SIPP_PATH=../../../opt/sipp
+
+FAIL_COUNT=0
+SUCC_COUNT=0
+COUNT=1
+
+# Функция подсчета успешных и неуспешных вызовов
+REZULT_A ()
+{
+if test $? -eq 0
+      then
+        SUCC_COUNT=$(($SUCC_COUNT+1))
+        echo "[DEBUG] Test $COUNT $T_NAME side A passed" >> $LOG_PATH/log.txt
+      else
+        FAIL_COUNT=$(($FAIL_COUNT+1))
+        echo "[DEBUG] Test $COUNT $T_NAME side A failed" >> $LOG_PATH/log.txt
+fi
+}
+
+# Конфигурируем 
+T_NAME=Configuration
+$SRC_PATH/sswconf_ss_perm.sh $DEV_USER $DEV_PASS $DEV_DOMAIN $EXTER_IP $DS_NAME
+REZULT_A
+
+# Вывод результата  
+echo "Success $SUCC_COUNT, Failed $FAIL_COUNT"	
+
+  if test $FAIL_COUNT -eq 0
+	then 
+        exit 0
+        else 
+        exit 1
+  fi
+}
+

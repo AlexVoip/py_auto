@@ -1,0 +1,95 @@
+{
+    "id": "SBC-1.5.1_NAT",
+    "type": "test",
+    "description": "SIP-Абоненты за NAT'ом на SBC-1.5.1",
+    "options": [
+	{
+	    "id": "EXTER_IP_A",
+	    "description": "IP входящего SIP-интерфейса на SBC",
+	    "value": "192.168.117.90"
+	},
+	{
+	    "id": "EXTER_PORT_A",
+	    "description": "Порт входящего SIP-интерфейса на SBC",
+	    "value": "5060"
+	},
+	{
+	    "id": "EXTER_IP_B",
+	    "description": "IP исходящего SIP-интерфейса на SBC",
+	    "value": "192.168.119.90"
+	},
+	{
+	    "id": "EXTER_PORT_B",
+	    "description": "Порт исходящего SIP-интерфейса на SBC",
+	    "value": "5062"
+	},
+	{
+	    "id": "IP_A",
+	    "description": "IP исходящего SIP-интерфейса sipp",
+	    "value": "192.168.117.56"
+	},
+	{
+	    "id": "PORT_A",
+	    "description": "Порт исходящего SIP-интерфейса sipp",
+	    "value": "5060"
+	},
+	{
+	    "id": "IP_B",
+	    "description": "IP входящего SIP-интерфейса sipp",
+	    "value": "192.168.119.56"
+	},
+	{
+	    "id": "PORT_B",
+	    "description": "Порт входящего SIP-интерфейса sipp",
+	    "value": "5062"
+	},
+	{
+	    "id": "IP_C",
+	    "description": "NAT IP",
+	    "value": "192.168.119.57"
+	},
+	{
+	    "id": "PORT_C",
+	    "description": "NAT port",
+	    "value": "5090"
+	},
+	{
+	    "id": "USER_A",
+	    "value": "200100"
+	},
+	{
+	    "id": "USER_B",
+	    "value": "500100"
+	},
+	{
+	    "id": "AUTH_A",
+	    "value": "200100"
+	},
+	{
+	    "id": "DOM_A",
+	    "value": "voip.local"
+	},
+	{
+	    "id": "AUTH_B",
+	    "value": "500100"
+	},
+	{
+	    "id": "DOM_B",
+	    "value": "voip.local"
+	},
+	{
+	    "id": "USER_NR",
+	    "value": "777777"
+	},
+	{
+	    "id": "DEBUG",
+	    "description": "Сохранять дополнительную информацию об ошибках",
+	    "value": "yes"
+	},
+	{
+	    "id": "FORCE",
+	    "description": "Игнорировать ошибки (попытаться запустить все тесты)",
+	    "value": "no"
+	}
+    ]
+}

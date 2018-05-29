@@ -1,0 +1,76 @@
+{
+    "options": [
+	{
+	    "id": "SIPP_PATH",
+	    "value": "opt/sipp"
+	},
+	{
+	    "id": "LIB_PATH",
+	    "value": "tests/lib"
+	},
+        {
+            "id": "SCRYPT_PATH",
+            "value": "tests/scripts/ssw350"
+        },
+        {
+            "id": "EXTER_IP",
+            "value": "192.168.118.52"
+        },
+        {
+            "id": "EXTER_PORT",
+            "value": "5060"
+        },
+        {
+            "id": "IP",
+            "value": "192.168.118.10"
+        },
+        {
+            "id": "USER_MASS",
+            "type": "basharray" 
+            "value": [
+			"200100", "500100", "200110", "200111", "200112", "200113", "200114", "200115", "200116", "200117", "200118"
+                     ]
+        },
+        {
+            "id": "USER_DOM_MASS",
+            "type": "basharray"
+            "value": [
+			"voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local"
+		]
+        },
+        {
+            "id": "USER_PIN_MASS",
+            "type": "basharray"
+            "value": [
+			"1111", "1111", "1111", "1111", "1111", "1111", "1111", "1111", "1111", "1111", "1111"
+		]
+        },
+        {
+            "id": "PORT_MASS",
+            "type": "basharray"
+            "value": [
+			"5060", "5060", "5060", "5060", "5060", "5060", "5060", "5060", "5060", "5060", "5060"
+		]
+        },
+        {
+            "id": "AUTH_MASS",
+            "type": "basharray"
+            "value": [
+                        "200100", "500100", "200110", "200111", "200112", "200113", "200114", "200115", "200116", "200117", "200118"
+		]
+        },
+        {
+            "id": "PASS_MASS",
+            "type": "basharray"
+            "value": [
+                        "200100", "500100", "200110", "200111", "200112", "200113", "200114", "200115", "200116", "200117", "200118"
+		]
+        },
+        {
+            "id": "MGM_KOD",
+            "value": "50"
+        }
+    ]
+}  
+
+

@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Базовый вызов (RFC 3261) и вызовы с предварительными надежными ответами (RFC 3262)
+# Смена UDP-порта для приема сигнализации в contact (передача BYE) – с PRACK (переделать, чтобы контакт брался из первого скрипта)
+
+. ./conf
+
+UAS_XML=uas_bye.xml
+UAC_XML_1=uac_rec_route_5067.xml
+UAC_XML_2=uac_rec_route_5067_2.xml
+
+cp tmp/$UAC_XML_1 $WORKDIR/
+cp tmp/$UAC_XML_2 $WORKDIR/
+cp tmp/$UAS_XML $WORKDIR/
+cp tmp/$USER_A-$USER_B.csv $WORKDIR/
+
+UAC1="$SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/uac_rec_route_5067.xml -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_A -s $USER_A -ap $AUTH_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p $PORT_A -recv_timeout 5s -timeout_error $SIPP_DEBUG"
+UAC2="$SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/uac_rec_route_5067_2.xml -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_A -s $USER_A -ap $AUTH_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p 5067 -recv_timeout 10s -timeout_error $SIPP_DEBUG"
+( echo $UAC1; echo $UAC2 ) > $WORKDIR/ugly_uac.sh
+
+run_sipp $SIPP_PATH/sipp $EXTER_IP_B:$EXTER_PORT_B -sf $WORKDIR/uas_bye.xml -mi $IP_B -m 1 -nd -i $IP_B -p $PORT_B -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+
+run_sipp /bin/sh $WORKDIR/ugly_uac.sh &
+
+wait
+
+exit `cat $WORKDIR/exit_code`

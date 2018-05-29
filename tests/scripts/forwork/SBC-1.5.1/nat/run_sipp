@@ -1,0 +1,13 @@
+#!/bin/sh
+
+timeout 200s $*
+
+current_exit_code=$?
+
+if [ -f $WORKDIR/exit_code ]; then
+    read previous_exit_code < $WORKDIR/exit_code
+fi
+
+if [ -z $previous_exit_code ] || [ $previous_exit_code -eq 0 ]; then
+    echo $current_exit_code > $WORKDIR/exit_code
+fi

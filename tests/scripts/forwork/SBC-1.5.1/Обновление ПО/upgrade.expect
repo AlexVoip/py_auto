@@ -1,0 +1,39 @@
+#!/usr/bin/expect
+
+set timeout 10
+
+set USER [ lindex $argv 0 ]
+set PASSWORD [ lindex $argv 1 ]
+set IP [ lindex $argv 2 ]
+set TFTP [ lindex $argv 3 ]
+set FILENAME [ lindex $argv 4 end ]
+
+spawn telnet $IP
+expect {
+    "onnected to" {
+	expect "login: " { send "$USER\n" }
+	expect "Password:" { send "$PASSWORD\n" }
+	expect {
+	    ">" { send "firmware update tftp $FILENAME $TFTP\n"; set timeout 400 }
+	    timeout {
+		puts stderr "не удалось зайти через telnet на IP $IP, логин/пароль: $USER/$PASSWORD"
+		exit 2
+	    }
+	}
+	expect {
+	    "irmware installed" {}
+	    timeout {
+		puts stderr "ошибка во время установки ПО"
+		exit 2
+	    }
+	}
+	expect {
+	    ">" { send "reboot yes\n" }
+	}
+	sleep 10
+    }
+    timeout {
+	puts stderr "не удалось подключиться к устройству с IP $IP по протоколу telnet"
+	exit 2
+    }
+}

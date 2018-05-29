@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# ROUTING
+# Record_route в ответах, в contact IP
+
+. ./conf
+
+UAS_XML=uas_rec_route_ip.xml
+UAC_XML=uac.xml
+
+cp tmp/$UAC_XML $WORKDIR/
+cp tmp/$UAS_XML $WORKDIR/
+cp tmp/$USER_A-$USER_B.csv $WORKDIR/
+
+run_sipp $SIPP_PATH/sipp $EXTER_IP_B:$EXTER_PORT_B -sf $WORKDIR/uas_rec_route_ip.xml -mi $IP_B -m 1 -nd -i $IP_B -p $PORT_B -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+run_sipp $SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/uac.xml -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_A -s $USER_A -ap $AUTH_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p $PORT_A -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+
+wait
+
+exit `cat $WORKDIR/exit_code`

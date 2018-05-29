@@ -1,0 +1,2165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://192.168.118.200/index" />
+<title>ZAPIS</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ZAPIS</td></tr>
+</thead><tbody>
+<tr>
+	<td>setSpeed</td>
+	<td>450</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://192.168.118.200/login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=login_username</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=login_password</td>
+	<td>rootpasswd</td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--Сетевые интерфейсы-->
+<tr>
+	<td>click</td>
+	<td>link=Сетевые интерфейсы</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//tr[@id='0']/td[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>name=mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuEditObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=label</td>
+	<td>bond1.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=addr</td>
+	<td>192.168.118.200</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=netmask</td>
+	<td>255.255.255.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=broadcast</td>
+	<td>192.168.1.255</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=df_gateway</td>
+	<td>0.0.0.0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td>2000</td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>2000</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=winPaneIP_content</td>
+	<td>Необходимо подтвердить сетевые настройки,<br />иначе изменения будут отменены!</td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=label</td>
+	<td>bond2</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=type</td>
+	<td>label=Tagged</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=VID</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=dhcp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=dhcp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=addr</td>
+	<td>1.1.1.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=netmask</td>
+	<td>255.255.255.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=broadcast</td>
+	<td>1.1.1.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=df_gateway</td>
+	<td>0.0.0.0</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=COS</td>
+	<td>label=1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=web</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=telnet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ssh</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=snmp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>name=mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=label</td>
+	<td>bond2.1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=type</td>
+	<td>label=Tagged</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=VID</td>
+	<td>3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=dhcp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=dhcp_dns</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=dhcp_ntp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=COS</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=web</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=telnet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ssh</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=snmp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=label</td>
+	<td>bond3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=type</td>
+	<td>label=VPN/pptp client</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=run_at_startup</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=serverip</td>
+	<td>1.1.1.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_name</td>
+	<td>name</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_pass</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=gw_ignore</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_mppe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=web</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=telnet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ssh</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=snmp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--Системные параметры-->
+<tr>
+	<td>click</td>
+	<td>link=Системные параметры</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=device_name</td>
+	<td>SMG2000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sbc_inv_per3s</td>
+	<td>label=120</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sbc_sub_per3s</td>
+	<td>label=120</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=sbc_tsx_per3s</td>
+	<td>label=120</td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sbc_inv_media_gl_timeout</td>
+	<td>10080</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=CDR-записи</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=create_mode</td>
+	<td>label=с заданным периодом</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=day</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=hour</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=mins</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=header</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=signature</td>
+	<td>SDR</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=local</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=dir_opt</td>
+	<td>label=единая директория</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=keep_day</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=keep_hour</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=keep_mins</td>
+	<td>label=3</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ftp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftpserver</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftpport</td>
+	<td>27</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftppath</td>
+	<td>/CDR</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftplogin</td>
+	<td>login</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftppasswd</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ftp2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftp2server</td>
+	<td>127.0.0.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftp2port</td>
+	<td>26</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftp2path</td>
+	<td>/CDR/FTP2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftp2login</td>
+	<td>login2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ftp2passwd</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=unsuccess</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=emptysave</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--Таблица маршрутизации-->
+<tr>
+	<td>clickAt</td>
+	<td>link=Таблица маршрутизации</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuSbcAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dest</td>
+	<td>1.1.1.3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=mask</td>
+	<td>255.255.255.0</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_interface</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=ifaceID</td>
+	<td>label=bond2.1 (bond1.3)</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=metric</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--Сетевые параметры-->
+<tr>
+	<td>click</td>
+	<td>link=Сетевые параметры</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=hostname</td>
+	<td>smg2000</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=gw_ifaceID</td>
+	<td>label=bond1.1 (bond1.1 192.168.118.200)</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dns0</td>
+	<td>0.0.0.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dns1</td>
+	<td>0.0.0.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ssh_port</td>
+	<td>22</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=telnet_port</td>
+	<td>23</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--SIP-->
+<tr>
+	<td>click</td>
+	<td>link=SIP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>3308</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=netiface_id</td>
+	<td>label=regexp:\[1\]\sbond2\s\(bond1\.2 1\.1\.1\.1\)</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=port</td>
+	<td>5061</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=transport</td>
+	<td>label=UDP-prefer</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=media_id</td>
+	<td>label=regexp:\[1\]\sbond2\s\(bond1\.2 1\.1\.1\.1\)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=adaptation</td>
+	<td>label=Nortel</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=rtp_to_enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rtp_to</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rtp_tos</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rtp_toin</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=rtcp_to_enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=se_enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rtcp_to</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=se</td>
+	<td>90</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--SIP Trunk-->
+<tr>
+	<td>click</td>
+	<td>link=SIP Trunk</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_addr0</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_port0</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_addr1</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_port1</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=balance_type</td>
+	<td>label=active-backup</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=balancing_timeout</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_up_ping_timeout</td>
+	<td>61</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_down_ping_timeout</td>
+	<td>21</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=type</td>
+	<td>label=Абоненты</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=behind_nat</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=nat_expires</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_sip_domain</td>
+	<td>1.1.1.3</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_auth_name</td>
+	<td>login</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_auth_pass</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sip_inv_reg_forbid1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sip_inv_reg_forbid2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sip_inv_reg_limit</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sip_inv_anon_forbid2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sip_inv_anon_limit</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=rfc2833_flash_convert</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=recv_only_from_peer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_addr0</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_port0</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_addr1</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_port1</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=balance_type</td>
+	<td>label=active-backup</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=balancing_timeout</td>
+	<td>7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_up_ping_timeout</td>
+	<td>61</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_down_ping_timeout</td>
+	<td>21</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=type</td>
+	<td>label=SIP trunk</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_auth_name</td>
+	<td>login</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dst_auth_pass</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=trunk_register</td>
+	<td>label=UAC</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=trunk_reg_uac_addr</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=trunk_reg_uac_port</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=trunk_reg_timeout</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=trunk_reg_name</td>
+	<td>name</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=trunk_reg_domain</td>
+	<td>1.1.1.4</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sip_inv_anon_forbid1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=sip_inv_anon_forbid2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sip_inv_anon_limit</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=rfc2833_flash_convert</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=recv_only_from_peer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--Диапазон RTP портов-->
+<tr>
+	<td>click</td>
+	<td>link=Диапазон RTP портов</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start</td>
+	<td>20001</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=range</td>
+	<td>10001</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--NTP-->
+<tr>
+	<td>click</td>
+	<td>link=NTP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_ntp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ntp_server</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>document.ntpFrm.mode[1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>css=select</td>
+	<td>label=GMT+1</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>//form[@id='ntpFrm']/table/tbody/tr[4]/td[2]/table/tbody/tr[2]/td/select</td>
+	<td>label=Europe</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>//form[@id='ntpFrm']/table/tbody/tr[4]/td[2]/table/tbody/tr[2]/td/select[2]</td>
+	<td>label=Brussels</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ntp_period</td>
+	<td>250</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Сервис</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuBurnFlash</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Записать конфигурацию на FLASH?</td>
+	<td></td>
+</tr>
+<!--SNMP-->
+<tr>
+	<td>click</td>
+	<td>link=SNMP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>2000</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sysname</td>
+	<td>name</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=syscon</td>
+	<td>contact</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=sysloc</td>
+	<td>location</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rocomm</td>
+	<td>roComm</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rwcomm</td>
+	<td>rwComm</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rwuser</td>
+	<td>username1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=rwpass</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Добавить']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuSbcAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=type</td>
+	<td>label=trap2sink</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=community</td>
+	<td>comm</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ip</td>
+	<td>0.0.0.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=port</td>
+	<td>163</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--VPN/pptp сервер-->
+<tr>
+	<td>click</td>
+	<td>link=VPN/pptp сервер</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=local_ip</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=local_ip</td>
+	<td>1.1.1.5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=start_ip</td>
+	<td>1.1.1.6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=end_ip</td>
+	<td>1.1.1.7</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=ifaceID</td>
+	<td>label=bond1.1 (bond1.1 192.168.118.200)</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dns</td>
+	<td>0.0.0.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=count</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mppe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=web</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=telnet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ssh</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=snmp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=radius</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--L2TP сервер-->
+<tr>
+	<td>click</td>
+	<td>link=L2TP сервер</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ip_local</td>
+	<td>1.1.1.10</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ip_range_left</td>
+	<td>1.1.1.11</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ip_range_right</td>
+	<td>1.1.1.12</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=ifaceID</td>
+	<td>label=bond1.1 (bond1.1 192.168.118.200)</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=port</td>
+	<td>1710</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dns</td>
+	<td>0.0.0.0</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=exclusive</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=length_bit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=hidden_bit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=web</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=telnet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ssh</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=snmp</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=radius</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=length_bit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--VPN/PPTP/L2TP пользователи-->
+<tr>
+	<td>click</td>
+	<td>link=VPN/PPTP/L2TP пользователи</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_name</td>
+	<td>VPN client 1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_pass</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_ip</td>
+	<td>1.1.1.11</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Сервис</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuBurnFlash</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Записать конфигурацию на FLASH?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>1000</td>
+</tr>
+<!--Fail2ban-->
+<tr>
+	<td>click</td>
+	<td>link=Fail2ban</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=time_block</td>
+	<td>601</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=try_block</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--Профили firewall-->
+<tr>
+	<td>click</td>
+	<td>link=Профили firewall</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>Firewall Profile #1</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=td &gt; input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>Firewall rule 1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enable</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=trafficType</td>
+	<td>label=Исходящий</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=senderIPany</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=senderIP</td>
+	<td>1.1.1.20/24</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=receiverIPany</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=receiverIP</td>
+	<td>1.1.1.21/24</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=protocol</td>
+	<td>label=UDP</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=senderPort</td>
+	<td>20</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=receiverPort</td>
+	<td>21</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=target</td>
+	<td>label=Drop</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Сервис</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuBurnFlash</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Записать конфигурацию на FLASH?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--Список разрешенных IP адресов-->
+<tr>
+	<td>click</td>
+	<td>link=Список разрешенных IP адресов</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_ip</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ip0</td>
+	<td>192.168.118.99</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Сервис</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuBurnFlash</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Записать конфигурацию на FLASH?</td>
+	<td></td>
+</tr>
+<!--PING-->
+<tr>
+	<td>click</td>
+	<td>link=PING</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=enabled</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=period</td>
+	<td>11</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=tries</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Сохранить']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=newHost</td>
+	<td>1.1.1.1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Добавить']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>IP адрес 1.1.1.1 успешно добавлен!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--MTR-->
+<tr>
+	<td>click</td>
+	<td>link=MTR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=hostname</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_c</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=report_cycles</td>
+	<td>10</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_s</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=psize</td>
+	<td>64</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_n</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_i</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=interval</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_6</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=use_a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=address</td>
+	<td>127.0.0.1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--RADIUS-->
+<tr>
+	<td>click</td>
+	<td>link=Сервера</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=authIp1</td>
+	<td>1.1.1.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=authPort1</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=authSecret1</td>
+	<td>111</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=authIp2</td>
+	<td>1.1.1.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=authPort2</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=authSecret2</td>
+	<td>222</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=timeout</td>
+	<td>8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=retries</td>
+	<td>4</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=deadtime</td>
+	<td>15</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Список профилей</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuSbcAddObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=name</td>
+	<td>RADIUS_Profile01</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=radio1</td>
+	<td>label=все запрещено (разрыв соединения)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=auth_name_mode</td>
+	<td>label=SIP interface name</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=digestauth</td>
+	<td>label=Draft-sterman (NetUp, FreeRadius)</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=nas_port_type</td>
+	<td>label=Sync</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=service_type</td>
+	<td>label=Login</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=framed_protocol</td>
+	<td>label=PPP</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;button&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=SIP</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//tr[@id='0']/td[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuEditObject</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>name=mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=iRADIUS</td>
+	<td>label=regexp:\[1\]\sRADIUS_Profile01</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td></td>
+	<td>2000</td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!--SYSLOG-->
+<tr>
+	<td>click</td>
+	<td>link=SYSLOG</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>mainPanel_iframe</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=dispatcher</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=manager</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=worker</td>
+	<td>5</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=comip</td>
+	<td>1.1.1.1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=comport</td>
+	<td>515</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=comtype</td>
+	<td>label=Стандартный</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Применить'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=syslogd_ena</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=syslogd_type</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=syslogd_ip</td>
+	<td>1.1.1.2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=syslogd_port</td>
+	<td>515</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@value='Применить'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Остановить']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Сервис</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=mnuBurnFlash</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Записать конфигурацию на FLASH?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPageToLoad</td>
+	<td>9000</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scenario name="uas">
+  <recv request="ACK" crlf="true">
+    <action>
+      <ereg regexp=".*" search_in="hdr" header="From:" assign_to="2"/>
+      <ereg regexp=".*" search_in="hdr" header="To:" assign_to="3"/>
+      <ereg regexp=".*" search_in="hdr" header="Via:" assign_to="4"/>
+    </action>
+  </recv>
+  <pause milliseconds="6000"/>
+  <send retrans="500"><![CDATA[
+BYE [field0] SIP/2.0
+Via:[$4]
+From: [$3]
+To: [$2]
+[last_Call-ID:]
+CSeq: 2 BYE
+Contact: sip:sipp@[local_ip]:[local_port]
+Max-Forwards: 70
+Subject: Performance Test
+Content-Length: 0
+
+]]></send>
+  <recv response="200" crlf="true"/>
+  <label id="1"/>
+  <ResponseTimeRepartition value="10, 20, 30, 40, 50, 100, 150, 200"/>
+  <CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000"/>
+</scenario>

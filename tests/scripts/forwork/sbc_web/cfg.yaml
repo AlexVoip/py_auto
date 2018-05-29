@@ -1,0 +1,405 @@
+SMG-config:
+  Version: 16
+  Ports:
+    ID: 1
+    start: 20001
+    range: 10001
+  SbcSip:
+    0:
+      ID: 1
+      name: 3308
+      netiface_id: 2
+      port: 5061
+      media_id: 2
+      adaptation: nortel
+      RTPcontrol: 10
+      RTPsilence: 10
+      RTPinactive: 10
+      RTCPtimeout: 10
+      SessionExpires: 90
+      rad_profile: 1
+      transport: UDP-prefer
+  SbcRoutes:
+    0:
+      ID: 1
+      name: 3308
+      to: 3308
+      to_servers: 1:1,2:2
+      balance_type: active_backup
+      balancing_timeout: 7
+      dst_down_timer: 21
+      dst_up_timer: 61
+      type: subscribers
+      behind_nat: yes
+      nat_expires: 100
+      sip_domain: 1.1.1.3
+      auth_name: login
+      auth_pass: password
+      rfc2833_flash_convert: yes
+      recv_only_from_peer: yes
+      sip_inv_reg_limit: 10
+      sip_inv_anon_limit: 10
+      sip_inv_reg_forbid: no
+      sip_inv_anon_forbid: no
+    1:
+      ID: 2
+      name: 3308
+      to: 3308
+      to_servers: 1:1,2:2
+      balance_type: active_backup
+      balancing_timeout: 7
+      dst_down_timer: 21
+      dst_up_timer: 61
+      type: sip_trunk
+      auth_name: login
+      auth_pass: password
+      rfc2833_flash_convert: yes
+      recv_only_from_peer: yes
+      sip_inv_anon_limit: 11
+      sip_inv_reg_forbid: no
+      sip_inv_anon_forbid: no
+      trunk_register: uac
+      trunk_reg_name: name
+      trunk_reg_domain: 1.1.1.4
+      trunk_reg_uac_addr: 1:1
+      trunk_reg_timeout: 10
+  CDRinfo:
+    ID: 1
+    cdr_enabled: yes
+    cdr_unsuccess: yes
+    cdr_local: yes
+    cdr_ftp: yes
+    cdr_ftp2: yes
+    cdr_header: yes
+    cdr_emptysave: yes
+    cdr_inmodclg: none
+    cdr_inmodcld: none
+    cdr_outmodclg: none
+    cdr_outmodcld: none
+    cdr_inmodredir: none
+    cdr_inmodorig: none
+    cdr_outmodredir: none
+    cdr_outmodorig: none
+    cdr_create_mode: periodically
+    cdr_day: 3
+    cdr_hour: 3
+    cdr_min: 3
+    cdr_signature: SDR
+    cdr_localpath: 
+    cdr_localdir: single
+    cdr_ftpserver: 127.0.0.1
+    cdr_ftpport: 27
+    cdr_ftppath: /CDR
+    cdr_ftplogin: login
+    cdr_ftppasswd: password
+    cdr_ftp2server: 127.0.0.2
+    cdr_ftp2port: 26
+    cdr_ftp2path: /CDR/FTP2
+    cdr_ftp2login: login2
+    cdr_ftp2passwd: password
+    cdr_keep_day: 3
+    cdr_keep_hour: 3
+    cdr_keep_min: 3
+    cdr_save_redir: no
+    cdr_mark_redir: no
+    cdr_mark_pickup: no
+    cdr_mark_rel_init: no
+    cdr_save_category: no
+  RADIUS:
+    0:
+      ID: 1
+      name: RADIUS_Profile01
+      auth_name_mode: trunk
+      action_on_acct_fail: allow
+      digestauth: draft_sterman
+      auth_nas_port_type: sync
+      auth_service_type: Login
+      auth_framed_protocol: PPP
+  RADIUS_SERVER:
+    ID: 1
+    auth:
+      0:
+        authip: 1.1.1.1
+        authport: 1
+        authsecret: 111
+      1:
+        authip: 1.1.1.2
+        authport: 2
+        authsecret: 222
+    acct: {}
+    ifaceID: 1
+    radius_timeout: 8
+    radius_retries: 4
+    radius_deadtime: 15
+  Systemlog_func:
+    ID: 1
+    ip: 1.1.1.1
+    ip_log: 1.1.1.2
+    port: 515
+    port_log: 515
+    mode: 1
+    type: remote
+    enable: yes
+  NetworkSettings:
+    0:
+      ID: 1
+      Hostname: smg2000
+      Iface_GW: 1
+      Gateway: 0.0.0.0
+      NTP_server: 127.0.0.1
+      DNS0: 0.0.0.0
+      DNS1: 0.0.0.0
+      NTP_period: 250
+      Web_port: 80
+      Telnet_port: 23
+      SSH_port: 22
+      Use_server_DHCP: no
+      Use_NTP: yes
+  NetIface:
+    0:
+      ID: 1
+      Label: bond1.1
+      FW_profile: 1
+      IPv4: yes
+      Web: yes
+      SSH: yes
+      Telnet: yes
+      SNMP: yes
+      Signaling: yes
+      RTP: yes
+      Radius: yes
+      H323: yes
+      Type: untagged
+      IPv4_addr: 192.168.118.200
+      IPv4_netmask: 255.255.255.0
+      IPv4_broadcast: 192.168.1.255
+      IPv4_gateway: 0.0.0.0
+      DHCP: no
+      DHCP_no_gw: no
+      DHCP_DNS: no
+      DHCP_NTP: no
+    1:
+      ID: 2
+      Label: bond2
+      FW_profile: 1
+      IPv4: yes
+      Web: yes
+      SSH: yes
+      Telnet: yes
+      SNMP: yes
+      Signaling: no
+      RTP: no
+      Radius: no
+      H323: no
+      Type: tagged
+      IPv4_addr: 1.1.1.1
+      IPv4_netmask: 255.255.255.0
+      IPv4_broadcast: 1.1.1.2
+      IPv4_gateway: 0.0.0.0
+      DHCP: no
+      DHCP_no_gw: no
+      DHCP_DNS: no
+      DHCP_NTP: no
+      VID: 2
+      COS: 1
+    2:
+      ID: 3
+      Label: bond2.1
+      FW_profile: 1
+      IPv4: yes
+      Web: yes
+      SSH: yes
+      Telnet: yes
+      SNMP: yes
+      Signaling: no
+      RTP: no
+      Radius: no
+      H323: no
+      Type: tagged
+      IPv4_addr: 0.0.0.0
+      IPv4_netmask: 0.0.0.0
+      IPv4_broadcast: 0.0.0.0
+      IPv4_gateway: 0.0.0.0
+      DHCP: yes
+      DHCP_no_gw: no
+      DHCP_DNS: yes
+      DHCP_NTP: yes
+      VID: 3
+      COS: 3
+    3:
+      ID: 4
+      Label: bond3
+      FW_profile: 1
+      IPv4: yes
+      Web: yes
+      SSH: yes
+      Telnet: yes
+      SNMP: yes
+      Signaling: no
+      RTP: no
+      Radius: no
+      H323: no
+      Type: pptpVPNc
+      ServerIP: 1.1.1.2
+      User_name: name
+      User_pass: password
+      Run_at_startup: yes
+      GW_ignore: yes
+      Use_mppe: yes
+  SNMP TRAP:
+    0:
+      ID: 1
+      type: trap2sink
+      ip: 0.0.0.1
+      community: comm
+      port: 163
+  AVAILABLE_IP:
+    0:
+      ID: 1
+      ip: 192.168.118.99
+  WHITE_IP_LIST:
+    ID: 1
+    use_list: yes
+    address-list:
+      0:
+        ip: 192.168.118.99
+  SNMP CONFIGURATION:
+    ID: 1
+    sysname: name
+    syslocation: location
+    syscontact: contact
+    rocommunity: roComm
+    rwcommunity: rwComm
+    rwuser: username1
+  SSHGUARD_INFO:
+    ID: 1
+    sshg_enable: yes
+    sshg_time_block: 601
+    sshg_tries_block: 40
+  HostPing:
+    ID: 1
+    hostping_enabled: yes
+    hostping_period: 11
+    hostping_tries: 5
+    hostping_list: [1.1.1.1]
+  DEVICE_INFO:
+    ID: 1
+    trace_path: default
+    alarm_path: off
+    device_name: SMG2000
+    plancount: 1
+    power_alarm: 0
+    fan_alarm: 1
+    cpu_alarm: 1
+    ram_alarm: 1
+    rom_alarm: 1
+    web_proto: 0
+    record_path: off
+    record_dirname: call_records
+    record_dirname_ivr: ivr_records
+    record_file_per_dir: 200
+    record_keep_day: 30
+    record_keep_hour: 0
+    record_full_disk_act: stop_recording
+    sbc_inv_per3s: 120
+    sbc_sub_per3s: 120
+    sbc_tsx_per3s: 120
+    sbc_inv_media_gl_timeout: 10080
+    ivr_scenario_path: /tmp/disk
+    ivr_sound_path: 
+  NetRoutes:
+    0:
+      ID: 1
+      enable: 1
+      target: 1.1.1.3
+      mask: 255.255.255.0
+      gateway: 0.0.0.0
+      interface_ID: 3
+      metric: 1
+  FireWallProfiles:
+    0:
+      ID: 1
+      name: 'Firewall Profile #1'
+      firstRuleID: 1
+      lastRuleID: 1
+  FireWallRules:
+    0:
+      ID: 1
+      enable: 1
+      profile: 1
+      name: Firewall rule 1
+      protocol: 2
+      action: 1
+      trafficType: 2
+      icmpType: 0
+      senderIP: 1.1.1.20
+      senderMask: 255.255.255.0
+      senderPortStart: 20
+      senderPortEnd: 20
+      receiverIP: 1.1.1.21
+      receiverMask: 255.255.255.0
+      receiverPortStart: 21
+      receiverPortEnd: 21
+      nextRuleID: 0
+      prevRuleID: 0
+  FtpdUsers:
+    0:
+      ID: 1
+      name: ftpuser
+      pass: dwssapptf
+      accessCdr: 2
+      accessLog: 2
+      accessMnt: 2
+  L2TP SERVER:
+    ID: 1
+    ifaceID: 1
+    enable: yes
+    FW_profile: 0
+    Web: yes
+    SSH: yes
+    Telnet: yes
+    SNMP: yes
+    Signaling: no
+    RTP: no
+    Radius: yes
+    H323: no
+    hostname: 
+    dns: 0.0.0.0
+    ip_range_left: 1.1.1.11
+    ip_range_right: 1.1.1.12
+    ip_local: 1.1.1.10
+    port: 1710
+    exclusive: yes
+    length_bit: yes
+    hidden_bit: yes
+    rx_bps: 0
+    tx_bps: 0
+  VPN SERVER:
+    ID: 1
+    ifaceID: 1
+    enable: yes
+    FW_profile: 0
+    Web: yes
+    SSH: yes
+    Telnet: yes
+    SNMP: yes
+    Signaling: no
+    RTP: no
+    Radius: yes
+    H323: no
+    localip: 1.1.1.5
+    firstip: 1.1.1.6
+    lastip: 1.1.1.7
+    dns: 0.0.0.1
+    count: 2
+    mppe: yes
+  VPN CLIENTS:
+    0:
+      ID: 1
+      username: VPN client 1
+      password: password
+  SBC debug config:
+    ID: 1
+    debug_dispatcher: 5
+    debug_manager: 5
+    debug_worker: 5

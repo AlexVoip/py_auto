@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Регистрации
+# Быстрый костыль, просто чтобы заработало
+# Регистрация абонента 600100, который нужен для теста 10.01 с переадресацией
+# Когда-нибудь, в далеком и светлом будущем, когда скрипты не будут зависеть друг от друга, его можно будет удалить
+
+. ./conf
+
+UAS_XML=regans.xml
+UAC_XML=reg.xml
+
+cp tmp/$UAC_XML $WORKDIR/
+cp tmp/$UAS_XML $WORKDIR/
+cp tmp/$USER_A-$USER_B.csv $WORKDIR/
+( echo "SEQUENTIAL;"; echo "500100;$DOM_A;600100;" ) >> $WORKDIR/register_500100.csv
+
+run_sipp $SIPP_PATH/sipp $EXTER_IP_B:$EXTER_PORT_B -sf $WORKDIR/regans.xml -mi $IP_B -m 1 -nd -i $IP_B -p $PORT_B -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+run_sipp $SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/reg.xml -inf $WORKDIR/register_500100.csv -mi $IP_A -s 500100 -ap 500100 -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p $PORT_A -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+
+wait
+
+exit `cat $WORKDIR/exit_code`

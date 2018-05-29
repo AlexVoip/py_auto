@@ -1,0 +1,114 @@
+{
+    "options": [
+	{
+	    "id": "SIPP_PATH",
+	    "value": "opt/sipp"
+	},
+	{
+	    "id": "LIB_PATH",
+	    "value": "tests/lib"
+	},
+        {
+            "id": "SCRYPT_PATH",
+            "value": "tests/scripts/ssw350"
+        },
+        {
+            "id": "DEV_USER",
+            "value": "admin"
+        },
+        {
+            "id": "DEV_PASS",
+            "value": "password"
+        },
+        {
+            "id": "DEV_DOMAIN",
+            "value": "voip.local"
+        },
+        {
+            "id": "EXTER_IP",
+            "value": "192.168.118.52"
+        },
+        {
+            "id": "EXTER_PORT",
+            "value": "5060"
+        },
+        {
+            "id": "IP",
+            "value": "192.168.118.10"
+        },
+        {
+            "id": "USER_A",
+            "value": "200500"
+        },
+        {
+            "id": "PASS_A",
+            "value": "$USER_A"
+        },
+        {
+            "id": "AUTH_A",
+            "value": "$USER_A"
+        },
+        {
+            "id": "DOM_A",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_A",
+            "value": "5060"
+        },
+        {
+            "id": "PIN_A",
+            "value": "1111"
+        },
+        {
+            "id": "USER_B",
+            "value": "500100"
+        },
+        {
+            "id": "PASS_B",
+            "value": "$USER_B"
+        },
+        {
+            "id": "AUTH_B",
+            "value": "$USER_B"
+        },
+        {
+            "id": "DOM_B",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_B",
+            "value": "5063"
+        },
+        {
+            "id": "PIN_B",
+            "value": "1111"
+        },
+        {
+            "id": "USER_C",
+            "value": "200110"
+        },
+        {
+            "id": "PASS_C",
+            "value": "$USER_C"
+        },
+        {
+            "id": "AUTH_C",
+            "value": "$USER_C"
+        },
+        {
+            "id": "DOM_C",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_C",
+            "value": "5161"
+        },
+        {
+            "id": "AUTORED_KOD",
+            "value": "39"
+        }
+    ]
+}  
+
+

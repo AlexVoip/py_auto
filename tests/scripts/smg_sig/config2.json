@@ -1,0 +1,60 @@
+{
+  "dut_proto": "m2ua",
+  "sock": {   
+    "0": {
+      "id": 0,
+      "type": "local",
+      "ipaddr": "192.168.118.46",
+      "port": 2904
+    },
+    "1": {
+      "id": 1,
+      "type": "remote",
+      "ipaddr": "192.168.118.88",
+      "port": 2904
+    },
+    "2": {
+      "id": 2,
+      "type": "local",
+      "ipaddr": "192.168.118.46",
+      "port": 2906
+    },
+    "3": {
+      "id": 3,
+      "type": "remote",
+      "ipaddr": "192.168.118.215",
+      "port": 2904
+    }
+  }, 
+  "device": {
+    "0": {
+      "id": 0,
+      "type": "smg1016m",
+      "sw": "sigtran",
+      "login": "admin",
+      "password": "rootpasswd"
+    }
+  },
+  "sigtran": {
+    "0": {
+      "id": 0,
+      "type": "asp",
+      "value": "10" 
+    },
+    "1": {
+      "id": 1,
+      "type": "asp",
+      "value": "11" 
+    },
+    "2": {
+      "id": 2,
+      "type": "iid",
+      "value": "10" 
+    },
+    "3": {
+      "id": 3,
+      "type": "iid",
+      "value": "11" 
+    }
+  }
+}

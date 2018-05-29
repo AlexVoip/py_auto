@@ -1,0 +1,140 @@
+#!/bin/bash
+
+# Тест услуги "Отмена всех услуг" - MGM.
+#
+# Условия теста: активированы услуги (выполнен скрипт sswconf_ss_perm.sh)
+
+# Переменные командной строки
+# $EXTER_IP SSW_IP_address
+# $IP SIPP_IP_address
+
+. tests/scripts/ssw342/conf
+
+# Путь к скриптам
+ROOT_DIR=$(pwd)
+SRC_PATH=$ROOT_DIR/tests/scripts/ssw342/mgm
+create_dir $SRC_PATH/temp
+TEMP_PATH=$SRC_PATH/temp
+create_file $TEMP_PATH/ex_code.txt
+create_dir log/ssw342_mgm
+LOG_PATH=log/ssw342_mgm
+
+create_file $LOG_PATH/log.txt
+
+# Путь к sipp
+#SIPP_PATH=../../../opt/sipp
+
+# Переменные для подсчета успешных, неуспешных вызовов и номер теста
+FAIL_COUNT=0
+SUCC_COUNT=0
+COUNT=0
+
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}; COUNT++ ));
+do
+# Создаем файлы с данными
+echo "SEQUENTIAL;
+${USER_MASS[$COUNT]};${USER_DOM_MASS[$COUNT]};#$MGM_KOD*${USER_PIN_MASS[$COUNT]}#;" > $TEMP_PATH/${USER_MASS[$COUNT]}.csv
+done
+
+FINISH ()
+{
+# Unregistration
+COUNT=$(($COUNT+1))
+T_NAME=UnRegistration
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}; COUNT++ ));
+do
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth0.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+
+# Удаляем файлы с данными
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}; COUNT++ ));
+do
+sudo rm $TEMP_PATH/${USER_MASS[$COUNT]}.csv
+done
+
+#    Читаем exit коды, чтобы убедиться, что все UAS отработали корректно.
+EX_FAIL=0
+while read line;do
+     excode=`echo $line | cut -d ' ' -f 3`
+     name=`echo $line | cut -d ' ' -f 1`
+     echo "[DEBUG] Exit code from test $name equal $excode" >> $LOG_PATH/log.txt
+     if [ "$excode" != "0" ];then
+        EX_FAIL=1
+        FAIL_COUNT=$(($FAIL_COUNT+1))
+     fi
+done < $TEMP_PATH/ex_code.txt
+
+sudo rm $TEMP_PATH/ex_code.txt
+
+# Вывод результата  
+echo "Success $SUCC_COUNT, Failed $FAIL_COUNT"  
+
+  if [[ $EX_FAIL -eq 0 && $FAIL_COUNT -eq 0 ]]
+        then 
+        exit 0
+        else 
+        exit 1
+  fi
+}
+
+# Функция подсчета успешных и неуспешных вызовов
+REZULT_A ()
+{
+if test $? -eq 0
+      then
+        SUCC_COUNT=$(($SUCC_COUNT+1))
+        echo "[DEBUG] Test $COUNT $T_NAME side A passed" >> $LOG_PATH/log.txt
+      else
+        FAIL_COUNT=$(($FAIL_COUNT+1))
+        echo "[DEBUG] Test $COUNT $T_NAME side A failed" >> $LOG_PATH/log.txt
+fi
+}
+
+# Function finishing script
+FATAL ()
+{
+sudo killall -9 screen
+sudo killall -9 sipp
+screen -wipe
+FAIL_COUNT=$(($FAIL_COUNT+999))
+}
+
+FUNC_TEST ()
+{
+        start_screen "$COUNT$T_NAME" "$COMMAND"  
+        sleep 0.5
+        check_screen "open" "$COUNT$T_NAME"
+        if test $? -ne 0; then
+                echo "Fatal error - screen failed" >> $LOG_PATH/log.txt
+                FATAL
+                FINISH
+        else   
+                $COMMAND_A
+                REZULT_A
+                wait_uas "$COUNT$T_NAME" 10
+                if test $? -eq 99;then 
+                        echo "Fatal error - screen timeout" >> $LOG_PATH/log.txt
+                        FATAL
+                        FINISH
+                fi
+                sleep 2
+        fi
+}
+
+# Registration users
+T_NAME=Registration
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}; COUNT++ ));
+do
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+
+# Deactivation feature
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}; COUNT++ ));
+do
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field2.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+
+FINISH

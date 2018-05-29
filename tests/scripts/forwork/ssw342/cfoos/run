@@ -1,0 +1,507 @@
+#!/bin/bash
+
+# Тест услуги "Переадресация по недоступности" - CFoos. 
+#
+# Условия теста: создано два SIP-абонента и один SIP-транк
+#              : активированы услуги (выполнен скрипт sswconf_ss_perm.sh)
+
+# Переменные командной строки
+# $EXTER_IP SSW_IP_address
+# $IP SIPP_IP_address
+
+. tests/scripts/ssw342/conf_cf
+
+# Путь к скриптам
+ROOT_DIR=$(pwd)
+SRC_PATH=$ROOT_DIR/tests/scripts/ssw342/cfoos
+create_dir $SRC_PATH/temp
+TEMP_PATH=$SRC_PATH/temp
+create_file $TEMP_PATH/ex_code.txt
+create_dir log/ssw342_cfoos
+LOG_PATH=log/ssw342_cfoos
+
+create_file $LOG_PATH/log.txt
+
+# Путь к sipp
+#SIPP_PATH=../../../opt/sipp
+
+# Переменные для подсчета успешных, неуспешных вызовов и номер теста
+FAIL_COUNT=0
+SUCC_COUNT=0
+COUNT=0
+
+# Функция исключения нескольких элементов
+IGNORE ()
+{
+if test $COUNT -eq 3
+   then
+     COUNT=$(($COUNT+1))
+fi
+if test $COUNT -eq 7
+   then
+     COUNT=$(($COUNT+1))
+fi
+}
+
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do 
+# Создаем файлы с данными
+echo "SEQUENTIAL;
+${USER_MASS[$COUNT]};${USER_DOM_MASS[$COUNT]};*$CFOOS_KOD*${USER_MASS[$(($COUNT+1))]}#;*#$CFOOS_KOD#;#$CFOOS_KOD#;*$CFOOS_KOD#;" > $TEMP_PATH/${USER_MASS[$COUNT]}.csv
+done
+
+# Создаем файлы с данными
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[7]};${USER_MASS[0]};" > $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[0]}.csv
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[7]};${USER_MASS[1]};" > $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[1]}.csv  
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[7]};${USER_MASS[2]};" > $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[2]}.csv  
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[7]};${USER_MASS[8]};" > $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[8]}.csv  
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[7]};${USER_MASS[9]};" > $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[9]}.csv  
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[7]};${USER_MASS[10]};" > $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[10]}.csv  
+
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[0]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[0]}.csv  
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[1]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[1]}.csv
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[2]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[2]}.csv
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[4]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[4]}.csv  
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[5]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[5]}.csv 
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[6]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[6]}.csv 
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[8]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[8]}.csv 
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[9]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[9]}.csv 
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[3]};${USER_MASS[10]};" > $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[10]}.csv 
+
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[11]};${USER_MASS[0]};" > $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[0]}.csv
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[11]};${USER_MASS[1]};" > $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[1]}.csv
+echo "SEQUENTIAL;
+${USER_MASS[7]};${USER_DOM_MASS[11]};${USER_MASS[2]};" > $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[2]}.csv
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[11]};${USER_MASS[4]};" > $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[4]}.csv
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[11]};${USER_MASS[5]};" > $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[5]}.csv
+echo "SEQUENTIAL;
+${USER_MASS[3]};${USER_DOM_MASS[11]};${USER_MASS[6]};" > $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[6]}.csv
+
+echo "SEQUENTIAL;
+${USER_MASS[10]};${USER_DOM_MASS[10]};*$CFOOS_KOD*${USER_MASS[0]}#;" > $TEMP_PATH/${USER_MASS[10]}-max.csv
+
+echo "SEQUENTIAL;
+${USER_MASS[0]};${USER_DOM_MASS[0]};*$CFOOS_KOD*$USER_NR#;" > $TEMP_PATH/${USER_MASS[0]}-$USER_NR.csv
+echo "SEQUENTIAL;
+${USER_MASS[1]};${USER_DOM_MASS[1]};*$CFOOS_KOD*$USER_UA#;" > $TEMP_PATH/${USER_MASS[1]}-$USER_UA.csv 
+echo "SEQUENTIAL;
+${USER_MASS[2]};${USER_DOM_MASS[2]};*$CFOOS_KOD*$USER_NN#;" > $TEMP_PATH/${USER_MASS[2]}-$USER_NN.csv 
+
+FINISH ()
+{
+# Unregistration
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do
+T_NAME="Unregistration ${USER_MASS[$COUNT]}"
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth0.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+
+# Удаляем файлы с данными (на случай, если они не были удалены)
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do
+sudo rm $TEMP_PATH/${USER_MASS[$COUNT]}.csv
+done
+
+# Удаляем файлы с данными
+sudo rm $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[0]}.csv
+sudo rm $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[1]}.csv                                  
+sudo rm $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[2]}.csv
+sudo rm $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[8]}.csv                                  
+sudo rm $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[9]}.csv
+sudo rm $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[10]}.csv
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[0]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[1]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[2]}.csv
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[4]}.csv
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[5]}.csv
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[6]}.csv      
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[8]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[9]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[10]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[0]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[1]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[2]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[4]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[5]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[6]}.csv 
+sudo rm $TEMP_PATH/${USER_MASS[10]}-max.csv 
+sudo rm $TEMP_PATH/${USER_MASS[0]}-$USER_NR.csv 
+sudo rm $TEMP_PATH/${USER_MASS[1]}-$USER_UA.csv 
+sudo rm $TEMP_PATH/${USER_MASS[2]}-$USER_NN.csv
+
+#    Читаем exit коды, чтобы убедиться, что все UAS отработали корректно.
+EX_FAIL=0
+while read line;do
+     excode=`echo $line | cut -d ' ' -f 3`
+     name=`echo $line | cut -d ' ' -f 1`
+     echo "[DEBUG] Exit code from test $name equal $excode" >> $LOG_PATH/log.txt
+     if [ "$excode" != "0" ];then
+        EX_FAIL=1
+        FAIL_COUNT=$(($FAIL_COUNT+1))
+     fi
+done < $TEMP_PATH/ex_code.txt
+
+sudo rm $TEMP_PATH/ex_code.txt
+
+# Вывод результата  
+echo "Success $SUCC_COUNT, Failed $FAIL_COUNT"  
+
+  if [[ $EX_FAIL -eq 0 && $FAIL_COUNT -eq 0 ]]
+        then 
+        exit 0
+        else 
+        exit 1
+  fi
+}
+
+# Функция подсчета успешных и неуспешных вызовов
+REZULT_A ()
+{
+if test $? -eq 0
+      then
+        SUCC_COUNT=$(($SUCC_COUNT+1))
+        echo "[DEBUG] Test $COUNT $T_NAME side A passed" >> $LOG_PATH/log.txt
+      else
+        FAIL_COUNT=$(($FAIL_COUNT+1))
+        echo "[DEBUG] Test $COUNT $T_NAME side A failed" >> $LOG_PATH/log.txt
+fi
+}
+
+# Function finishing script
+FATAL ()
+{
+sudo killall -9 screen
+screen -wipe
+sudo killall -9 sipp
+FAIL_COUNT=$(($FAIL_COUNT+999))
+}
+
+FUNC_TEST ()
+{
+        start_screen "$COUNT$T_NAME" "$COMMAND"  
+        sleep 0.5
+        check_screen "open" "$COUNT$T_NAME"
+        if test $? -ne 0; then
+                echo "Fatal error - screen failed" >> $LOG_PATH/log.txt
+                FATAL
+                FINISH
+        else   
+                $COMMAND_A
+                REZULT_A
+                wait_uas "$COUNT$T_NAME" 10
+                if test $? -eq 99;then 
+                        echo "Fatal error - screen timeout" >> $LOG_PATH/log.txt
+                        FATAL
+                        FINISH
+                fi
+                sleep 2
+        fi
+}
+
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do
+# Registration users
+T_NAME="Registration ${USER_MASS[$COUNT]}"
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do
+IGNORE
+# Activation feature
+T_NAME="Activation ${USER_MASS[$COUNT]}"
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field2.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do
+IGNORE
+T_NAME="Deregistration CF users ${USER_MASS[$COUNT]}"
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth0.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done  
+
+echo "CFOOS once and with PRACK" >> $LOG_PATH/log.txt
+COUNT=0
+while [ $COUNT -lt 3 ] 
+do
+COUNT=$(($COUNT+1))
+
+T_NAME=A-B
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[2]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=A-C
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[10]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=B-A
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[6]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=B-C
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[10]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=C-A
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[2]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=C-B
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[6]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+done
+
+echo CFOOS_twice >> $LOG_PATH/log.txt
+T_NAME=A-B
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[1]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=A-C
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[9]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=B-A
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[5]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=B-C
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[9]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=C-A
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[1]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=C-B
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[5]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+echo CFOOS_three >> $LOG_PATH/log.txt
+T_NAME=A-B
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[0]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=A-C
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[8]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=B-A
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[4]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=B-C
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[8]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=C-A
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[0]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=C-B
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[4]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+echo "To busy, to unavailable" >> $LOG_PATH/log.txt
+COUNT=5
+while [ $COUNT -lt 7 ]
+do
+COUNT=$(($COUNT+1))
+
+T_NAME=A-B
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[0]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=A-C
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[8]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=B-A
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[4]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=B-C
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[8]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=C-A
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[0]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME=C-B
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/$COUNT-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[4]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+done
+
+T_NAME="Max_redirect__5"
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth.xml -inf $TEMP_PATH/${USER_MASS[10]}.csv -mi $IP -s ${AUTH_MASS[10]} -ap ${PASS_MASS[10]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[10]} -recv_timeout 200s -timeout_error
+REZULT_A
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field2.xml -inf $TEMP_PATH/${USER_MASS[10]}-max.csv -mi $IP -s ${AUTH_MASS[10]} -ap ${PASS_MASS[10]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[10]} -recv_timeout 200s -timeout_error
+REZULT_A
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth0.xml -inf $TEMP_PATH/${USER_MASS[10]}.csv -mi $IP -s ${AUTH_MASS[10]} -ap ${PASS_MASS[10]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[10]} -recv_timeout 200s -timeout_error                 
+REZULT_A
+
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/1-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[9]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+T_NAME="max_redir__5_test_With_PRACK"
+COMMAND="$SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/2-uas_ssw.xml -mi $IP -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error; echo $COUNT $T_NAME \$? >> $TEMP_PATH/ex_code.txt"
+COMMAND_A="sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/2-uac_181_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[9]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error"
+FUNC_TEST
+sleep 2
+
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field2_483.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[8]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error   
+REZULT_A
+sleep 2
+
+T_NAME="Activation Not register, Unallocated, No number"
+for (( COUNT=0; COUNT<3; COUNT++ ));
+do
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field2.xml -inf $TEMP_PATH/${USER_MASS[0]}-$USER_NR.csv -mi $IP -s ${AUTH_MASS[0]} -ap ${PASS_MASS[0]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[0]} -recv_timeout 200s -timeout_error
+REZULT_A
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field2.xml -inf $TEMP_PATH/${USER_MASS[1]}-$USER_UA.csv -mi $IP -s ${AUTH_MASS[1]} -ap ${PASS_MASS[1]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[1]} -recv_timeout 200s -timeout_error
+REZULT_A
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field2.xml -inf $TEMP_PATH/${USER_MASS[2]}-$USER_NN.csv -mi $IP -s ${AUTH_MASS[2]} -ap ${PASS_MASS[2]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[2]} -recv_timeout 200s -timeout_error
+REZULT_A
+for (( COUNT=0; COUNT<3; COUNT++ ));                 
+do
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth0.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error 
+REZULT_A
+done
+
+T_NAME="Test Not register, Unallocated, No number"
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/11-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[0]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error
+REZULT_A
+sleep 2
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/11-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[0]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error
+REZULT_A
+sleep 2
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/11-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[0]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error    
+REZULT_A
+sleep 2
+
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/12-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[1]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error
+REZULT_A
+sleep 2
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/12-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[1]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error    
+REZULT_A
+sleep 2
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/12-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[1]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error
+REZULT_A
+sleep 2
+
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/13-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[7]}-${USER_MASS[2]}.csv -mi $IP -s ${AUTH_MASS[7]} -ap ${PASS_MASS[7]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[7]} -recv_timeout 200s -timeout_error
+REZULT_A
+sleep 2
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/13-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[3]}-${USER_MASS[2]}.csv -mi $IP -s ${AUTH_MASS[3]} -ap ${PASS_MASS[3]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[3]} -recv_timeout 200s -timeout_error    
+REZULT_A
+sleep 2
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/13-uac_ssw.xml -inf $TEMP_PATH/${USER_MASS[11]}-${USER_MASS[2]}.csv -mi $IP -s ${AUTH_MASS[11]} -ap ${PASS_MASS[11]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[11]} -recv_timeout 200s -timeout_error
+REZULT_A
+sleep 2
+
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do
+IGNORE
+T_NAME="Registration ${USER_MASS[$COUNT]}"
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/reg_auth.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done 
+
+
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do
+IGNORE
+T_NAME="Control ${USER_MASS[$COUNT]}"
+# Control feature
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field3.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+
+for (( COUNT=0; COUNT<${#PORT_MASS[*]}-1; COUNT++ ));
+do
+IGNORE
+# Deactivation feature
+T_NAME="Deactivation ${USER_MASS[$COUNT]}"
+sudo $SIPP_PATH/sipp $EXTER_IP -sf $SRC_PATH/uac_field4.xml -inf $TEMP_PATH/${USER_MASS[$COUNT]}.csv -mi $IP -s ${AUTH_MASS[$COUNT]} -ap ${PASS_MASS[$COUNT]} -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p ${PORT_MASS[$COUNT]} -recv_timeout 200s -timeout_error
+REZULT_A
+done
+
+FINISH

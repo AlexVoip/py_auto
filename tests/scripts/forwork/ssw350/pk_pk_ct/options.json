@@ -1,0 +1,162 @@
+{
+    "options": [
+	{
+	    "id": "SIPP_PATH",
+	    "value": "opt/sipp"
+	},
+	{
+	    "id": "LIB_PATH",
+	    "value": "tests/lib"
+	},
+        {
+            "id": "AUDIO_PATH",
+            "value": "tests/audio"
+        },
+        {
+            "id": "SCRYPT_PATH",
+            "value": "tests/scripts/ssw350"
+        },
+        {
+            "id": "DEV_USER",
+            "value": "admin"
+        },
+        {
+            "id": "DEV_PASS",
+            "value": "password"
+        },
+        {
+            "id": "DEV_DOMAIN",
+            "value": "voip.local"
+        },
+        {
+            "id": "DS_NAME",
+            "value": "ds1"
+        },
+        {
+            "id": "EXTER_IP",
+            "value": "192.168.118.52"
+        },
+        {
+            "id": "EXTER_PORT",
+            "value": "5060"
+        },
+        {
+            "id": "IP",
+            "value": "192.168.118.10"
+        },
+        {
+            "id": "USER_A",
+            "value": "500100"
+        },
+        {
+            "id": "PASS_A",
+            "value": "$USER_A"
+        },
+        {
+            "id": "AUTH_A",
+            "value": "$USER_A"
+        },
+        {
+            "id": "DOM_A",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_A",
+            "value": "5061"
+        },
+        {
+            "id": "USER_B",
+            "value": "200112"
+        },
+        {
+            "id": "PASS_B",
+            "value": "$USER_B"
+        },
+        {
+            "id": "AUTH_B",
+            "value": "$USER_B"
+        },
+        {
+            "id": "DOM_B",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_B",
+            "value": "5062"
+        },
+        {
+            "id": "USER_C",
+            "value": "200111"
+        },
+        {
+            "id": "PASS_C",
+            "value": "$USER_C"
+        },
+        {
+            "id": "AUTH_C",
+            "value": "$USER_C"
+        },
+        {
+            "id": "DOM_C",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_C",
+            "value": "5063"
+        },
+        {
+            "id": "USER_D",
+            "value": "200110"
+        },
+        {
+            "id": "PASS_D",
+            "value": "$USER_D"
+        },
+        {
+            "id": "AUTH_D",
+            "value": "$USER_D"
+        },
+        {
+            "id": "DOM_D",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_D",
+            "value": "5160"
+        },
+        {
+            "id": "USER_E",
+            "value": "200100"
+        },
+        {
+            "id": "PASS_E",
+            "value": "$USER_E"
+        },
+        {
+            "id": "AUTH_E",
+            "value": "$USER_E"
+        },
+        {
+            "id": "DOM_E",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_E",
+            "value": "5064"
+        },
+        {
+            "id": "HOLD_CODE",
+            "value": "94"
+        },
+        {
+            "id": "PK_CODE",
+            "value": "*08#"
+        },
+        {
+            "id": "CTR_CODE",
+            "value": "96"
+        }
+    ]
+}  
+
+

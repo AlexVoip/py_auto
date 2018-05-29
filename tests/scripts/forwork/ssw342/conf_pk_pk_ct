@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Путь к sipp 
+SIPP_PATH=opt/sipp
+LIB_PATH=tests/lib
+AUDIO_PATH=tests/audio
+SCRYPT_PATH=tests/script/ssw342
+
+# Библиотеки
+source $LIB_PATH/screen_lib.sh
+source $LIB_PATH/create_lib.sh
+
+# Переменные командной строки
+DEV_USER=admin
+DEV_PASS=password
+DEV_DOMAIN=voip.local
+EXTER_IP=192.168.118.52
+IP=192.168.118.10
+
+DS_NAME=ds1
+
+# Номера абонентов
+# Number A - SIP user
+# Number B - SIP dynamic user
+# Number C - SIP trunk user
+USER_A=500100
+USER_B=200112
+USER_C=200111
+USER_D=200110 # To change this variable, you must have correspoding pcap audio file 
+USER_E=200100
+
+PASS_A=$USER_A
+PASS_B=$USER_B
+PASS_C=$USER_C
+PASS_D=$USER_D
+PASS_E=$USER_E
+
+AUTH_A=$USER_A
+AUTH_B=$USER_B
+AUTH_C=$USER_C
+AUTH_D=$USER_D
+AUTH_E=$USER_E
+
+DOM_A=voip.local
+DOM_B=voip.local
+DOM_C=voip.local
+DOM_D=voip.local
+DOM_E=voip.local
+
+PORT_A=5061
+PORT_B=5062
+PORT_C=5063
+PORT_D=5160
+PORT_E=5064
+
+PK_CODE="*08#"
+HOLD_CODE=94
+CTR_CODE=96

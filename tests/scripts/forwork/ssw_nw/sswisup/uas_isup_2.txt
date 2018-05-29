@@ -1,0 +1,37 @@
+      --unique-boundary-1--
+
+    ]]>
+  </send>
+
+        <recv request="PRACK" crlf="true" />
+        <send>
+                <![CDATA[
+SIP/2.0 200 OK
+[last_Via:]
+[last_From:]
+[last_To:]
+[last_Call-ID:]
+[last_CSeq:]
+Contact: <sip:[local_ip]:[local_port];transport=[transport]>
+Content-Length: 0
+
+]]>
+  </send>
+
+  <send>
+    <![CDATA[
+
+      SIP/2.0 183 Progresso
+      Via:[$4]
+      From: [$2]
+      To: [$3];tag=[pid]SIPpTag01[call_number]
+      [last_Call-ID:]
+      CSeq: [$1]
+      RSeq: 2
+      Supported: 100rel
+      Require: 100rel
+      Contact: <sip:[local_ip]:[local_port];transport=[transport]>
+      Content-Type: application/ISUP;version=itu-t92+
+      Content-Disposition: signal;handling=required
+      Content-Length: [len]
+

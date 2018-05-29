@@ -1,0 +1,92 @@
+#!/bin/bash
+
+. tests/scripts/smg_bugs/bug56398/conf
+#. ./conf
+
+# Библиотеки
+source $LIB_PATH/screen_lib.sh
+source $LIB_PATH/create_lib.sh
+
+# Путь к скриптам
+ROOT_DIR=$(pwd)
+SRC_PATH=$ROOT_DIR/$SCRYPT_PATH/bug56398
+create_dir $SRC_PATH/temp
+TEMP_PATH=$SRC_PATH/temp
+create_dir log/smgbugs_bug56398
+LOG_PATH=log/smgbugs_bug56398
+
+create_file $LOG_PATH/log.txt
+
+# Путь к sipp
+#SIPP_PATH=../../../opt/sipp
+
+# Создаем файлы с данными
+echo "SEQUENTIAL;
+$USER_A;$DOM_A;$PORT_CONT;$CONT_DOM" > $TEMP_PATH/$USER_A.csv
+
+
+
+
+# Переменные для подсчета успешных, неуспешных вызовов и номер теста
+FAIL_COUNT=0
+SUCC_COUNT=0
+COUNT=0
+
+# Функция подсчета успешных и неуспешных вызовов
+REZULT_A ()
+{
+if test $? -eq 0
+      then
+
+        SUCC_COUNT=$(($SUCC_COUNT+1))
+        echo "[DEBUG] Test $COUNT $T_NAME side A passed" >> $LOG_PATH/log.txt
+      else
+        FAIL_COUNT=$(($FAIL_COUNT+1))
+        echo "[DEBUG] Test $COUNT $T_NAME side A failed" >> $LOG_PATH/log.txt
+fi
+}
+
+# Function finishing script
+FATAL ()
+{
+sudo killall -9 screen
+sudo killall -9 sipp
+screen -wipe
+FAIL_COUNT=$(($FAIL_COUNT+999))
+}
+
+FINISH ()
+{
+
+COUNT=$(($COUNT+1))
+T_NAME=UnRegistration
+sudo $SIPP_PATH/sipp $EXTER_IP:$EXTER_PORT -sf $SRC_PATH/reg_auth0.xml -inf $TEMP_PATH/$USER_A.csv -mi $IP -s $AUTH_A -ap $PASS_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p $PORT_A -recv_timeout 20s -timeout_error
+REZULT_A
+
+# Удаляем файлы с данными
+sudo rm $TEMP_PATH/$USER_A.csv
+sudo rm $TEMP_PATH/$USER_A1.csv
+
+# Вывод результата  
+echo "Success $SUCC_COUNT, Failed $FAIL_COUNT"	
+
+  if [[ $EX_FAIL -eq 0 && $FAIL_COUNT -eq 0 ]]
+	then 
+        exit 0
+        else 
+        exit 1
+  fi
+}
+
+T_NAME=Registration
+sudo $SIPP_PATH/sipp $EXTER_IP:$EXTER_PORT -sf $SRC_PATH/reg_auth.xml -inf $TEMP_PATH/$USER_A.csv -mi $IP -s $AUTH_A -ap $PASS_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p $PORT_A -recv_timeout 20s -timeout_error
+REZULT_A
+
+sleep 10
+
+sudo $SIPP_PATH/sipp $EXTER_IP:$EXTER_PORT -sf $SRC_PATH/opt_auth.xml -inf $TEMP_PATH/$USER_A1.csv -mi $IP -s $AUTH_A -ap $PASS_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP -p $PORT_CONT -recv_timeout 20s -timeout_error
+REZULT_A
+
+
+
+FINISH

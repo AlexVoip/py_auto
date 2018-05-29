@@ -1,0 +1,95 @@
+#!/bin/bash
+
+if [ $# -ne 5 ]
+then
+	echo -e  "\nОшибка при запуске\n"
+
+elif [ $# -eq 5 ]
+then
+
+touch /$5/$4				 #создадим пустой файл в папке tftp-сервера
+sudo chmod o+rwx /$5/$4			 #присвоим права
+
+#(
+#	sleep 1
+#	echo "admin"
+#	sleep 1
+#	echo "rootpasswd"
+#	sleep 1
+#	echo "sh"
+#	sleep 1
+#	echo "rm /etc/config/cfg.yaml"
+#	sleep 1
+#	echo "save"
+#	sleep 1
+#	echo "reboot"
+#	sleep 100
+#		) | telnet 192.168.118.200	
+
+#сброс к завод.настройкам
+
+java -jar $11 -htmlsuite "*firefox" "" "TESTS/sbc/Selenium/restore(suite).html" "TESTS/sbc/Selenium/result(restore).html"
+
+#восстанавливаем IP адрес
+
+sleep2
+sudo ifconfig eth1 192.168.1.20
+
+(
+        sleep 1
+        echo "admin"
+        sleep 1
+        echo "rootpasswd"
+        sleep 1
+        echo "sh"
+        sleep 1
+        echo "ifconfig bond1.1 192.168.118.200"
+	sleep 2
+                ) | telnet 192.168.1.2
+
+sudo ifconfig eth1 192.168.118.99
+
+#ввод контрольных параметров через Selenium
+java -jar /var/selenium/server.jar -htmlsuite "*firefox" "http://192.168.118.200" "TESTS/sbc/Selenium/control_param(suite).html" "TESTS/sbc/Selenium/result.html"
+
+sleep 2
+cd TESTS/sbc/
+sleep 1
+
+(
+	sleep 1
+	echo "admin"
+	sleep 1
+	echo "rootpasswd"
+	sleep 1
+	echo "sh"
+	sleep 1
+	echo "cd /etc/config/"
+	sleep 1
+	echo "tftp -pl cfg.yaml 192.168.118.99"
+	sleep 1
+		) | telnet 192.168.118.200		#скачиваем новые внесенные конфигурации
+
+(
+	sleep 2
+	echo "get cfg.yaml"
+	echo "quit"
+		) | tftp 192.168.118.99		#адрес tftp сервера
+sleep3
+
+#сравнение строк
+file1=cfg.yaml
+file2=control_file
+ 
+str1=$(cat $file1)
+str2=$(cat $file2)
+
+        if [ "$str1" = "$str2" ]
+        then
+                echo -e "\n#############\nОтличий нет\nЭто победа\n#############"
+        else
+                echo -e "\n###################\n  Имеются отличия\n###################"
+                echo "Разница: контрольный/считанный"
+                diff  $file1 $file2
+	fi
+fi

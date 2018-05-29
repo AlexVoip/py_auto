@@ -1,0 +1,89 @@
+{
+    "options": [
+	{
+	    "id": "SIPP_PATH",
+	    "value": "opt/sipp"
+	},
+	{
+	    "id": "LIB_PATH",
+	    "value": "tests/lib"
+	},
+        {
+            "id": "SCRYPT_PATH",
+            "value": "tests/scripts/ssw350"
+        },
+        {
+            "id": "EXTER_IP",
+            "value": "192.168.118.52"
+        },
+        {
+            "id": "EXTER_PORT",
+            "value": "5060"
+        },
+        {
+            "id": "IP",
+            "value": "192.168.118.10"
+        },
+        {
+            "id": "USER_NR",
+            "value": "200101"
+        },
+        {
+            "id": "PASS_NR",
+            "value": "$USER_NR"
+        },
+        {
+            "id": "AUTH_NR",
+            "value": "$USER_NR"
+        },
+        {
+            "id": "DOM_NR",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_NR",
+            "value": "5160"
+        },
+        {
+            "id": "USER_UA",
+            "value": "200102"
+        },
+        {
+            "id": "USER_NN",
+            "value": "2000000"
+        },
+        {
+            "id": "USER_MASS",
+            "type": "basharray" 
+            "value": [
+			"200100", "500100", "200110", "200111", "200112", "200113", "200114", "200115", "200116", "200117", "200118" "800100
+		]
+        },
+        {
+            "id": "USER_DOM_MASS",
+            "type": "basharray"
+            "value": ["voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "voip.local", "$EXTER_IP"]
+        },
+        {
+            "id": "PORT_MASS",
+            "type": "basharray"
+            "value": ["5160", "5161", "5162", "5063", "5163", "5164", "5165", "5060", "5166", "5167", "5168", "6060"]
+        },
+        {
+            "id": "AUTH_MASS",
+            "type": "basharray"
+            "value": ["200100", "500100", "200110", "200111", "200112", "200113", "200114", "200115", "200116", "200117", "200118", "800100"]
+        },
+        {
+            "id": "PASS_MASS",
+            "type": "basharray"
+            "value": ["200100", "500100", "200110", "200111", "200112", "200113", "200114", "200115", "200116", "200117", "200118", "800100"]
+        },
+        {
+            "id": "CFNR2_KOD",
+            "value": "42"
+        }
+    ]
+}  
+
+

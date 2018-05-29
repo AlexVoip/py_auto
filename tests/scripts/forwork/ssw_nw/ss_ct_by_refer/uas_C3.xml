@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<scenario name="3PCC A side">
+
+
+  <send retrans="500">
+    <![CDATA[
+
+      BYE sip:[field8]:[field9] SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: sipp <sip:[local_ip]>;[field6]
+      To: sut <sip:[remote_ip]>;[field4]
+      [field7]
+      CSeq: 1551 BYE
+      Contact: sip:[local_ip]:[local_port]
+      Max-Forwards: 70
+      Subject: Performance Test
+      Content-Length: 0
+
+    ]]>
+  </send>
+
+
+</scenario>

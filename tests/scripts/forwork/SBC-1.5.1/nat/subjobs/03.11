@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Базовый вызов (RFC 3261) и вызовы с предварительными надежными ответами (RFC 3262)
+# Вызов на незарегистрированный номер
+
+. ./conf
+
+UAC_XML=uac_no_ans.xml
+
+cp tmp/$UAC_XML $WORKDIR/
+cp tmp/$USER_B-$USER_NR.csv $WORKDIR/
+
+run_sipp $SIPP_PATH/sipp $EXTER_IP_B:$EXTER_PORT_B -sf $WORKDIR/$UAC_XML -inf $WORKDIR/$USER_B-$USER_NR.csv -mi $IP_C -s $USER_B -ap $AUTH_B -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_C -p $PORT_C -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+
+wait
+
+exit `cat $WORKDIR/exit_code`

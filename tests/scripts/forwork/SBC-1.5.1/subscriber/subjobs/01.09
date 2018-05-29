@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Регистрации
+# Адаптация Huawei SoftX. Регистрация c портом в контакте, ответ без порта в контакте
+
+. ./conf
+
+UAS_XML=regans_wo_port.xml
+UAC_XML=reg_wo_port.xml
+
+cp tmp/$UAC_XML $WORKDIR/
+cp tmp/$UAS_XML $WORKDIR/
+cp tmp/$USER_A-$USER_B.csv $WORKDIR/
+
+run_sipp $SIPP_PATH/sipp $EXTER_IP_B:$EXTER_PORT_B -sf $WORKDIR/regans_wo_port.xml -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_B -m 1 -nd -i $IP_B -p $PORT_B -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+run_sipp $SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/reg_wo_port.xml -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_A -s $USER_A -ap $AUTH_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p $PORT_A -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+
+wait
+
+exit `cat $WORKDIR/exit_code`

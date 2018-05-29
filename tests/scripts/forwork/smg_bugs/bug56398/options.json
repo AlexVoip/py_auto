@@ -1,0 +1,58 @@
+{
+    "options": [
+	{
+	    "id": "SIPP_PATH",
+	    "value": "opt/sipp"
+	},
+	{
+	    "id": "LIB_PATH",
+	    "value": "tests/lib"
+	},
+        {
+            "id": "SCRYPT_PATH",
+            "value": "tests/scripts/smg_bugs"
+        },
+        {
+            "id": "EXTER_IP",
+            "value": "192.168.118.98"
+        },
+        {
+            "id": "EXTER_PORT",
+            "value": "5060"
+        },
+        {
+            "id": "IP",
+            "value": "192.168.118.10"
+        },
+        {
+            "id": "USER_A",
+            "value": "700101"
+        },
+        {
+            "id": "PASS_A",
+            "value": "$USER_A"
+        },
+        {
+            "id": "AUTH_A",
+            "value": "$USER_A"
+        },
+        {
+            "id": "DOM_A",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_A",
+            "value": "5060"
+        },
+        {
+            "id": "CONT_DOM",
+            "value": "www.leningrad.spb.ru"
+        },
+        {
+            "id": "PORT_CONT",
+            "value": "$PORT_A"
+        }
+    ]
+}  
+
+

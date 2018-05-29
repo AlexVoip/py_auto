@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scenario name="uas">
+	<recv request="INVITE" crlf="true" />
+	<send>
+		<![CDATA[
+SIP/2.0 100 Trying
+[last_Via:]
+[last_From:]
+[last_To:]
+[last_Call-ID:]
+[last_CSeq:]
+Content-Length: 0
+
+]]>
+	</send>	
+         <send>
+		<![CDATA[
+SIP/2.0 302 Call transfer
+[last_Via:]
+[last_From:]
+[last_To:]
+[last_Call-ID:]
+[last_CSeq:]
+Server: voip-rgw.kubtel.ru
+Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH
+Contact: <sip:500000@192.168.118.253;transport=[transport]>
+Supported: replaces
+Content-Length: 0
+
+]]>
+	</send>
+	<recv request="ACK" crlf="true" />
+	<label id="1" />
+	<ResponseTimeRepartition value="10, 20, 30, 40, 50, 100, 150, 200" />
+	<CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000" />
+</scenario>

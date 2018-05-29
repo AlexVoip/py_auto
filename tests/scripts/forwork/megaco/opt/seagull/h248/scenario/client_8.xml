@@ -1,0 +1,128 @@
+<!--
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+ (c)Copyright 2006 Hewlett-Packard Development Company, LP.
+
+-->
+
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<scenario>
+
+<counter>
+  <counterdef name="transaction-counter" init="11"> </counterdef>
+</counter>
+
+<traffic>
+ 
+<wait-ms value="4000"> </wait-ms>  
+
+<!--of 55 1509-->
+   <send channel="channel-1">
+ <action>
+      <inc-counter name="transaction-counter"> </inc-counter>
+      <set-value name="transaction-id"
+                 format="$(transaction-counter)">
+		</set-value>
+  </action>
+    <message>
+       <![CDATA[MEGACO/1 Tau56
+                Transaction = 18571]]>
+
+		<![CDATA[Context = 2 {
+					Notify = aaln/55
+}
+}]]>  		  		
+     </message>
+   </send> 
+
+<!--of 55 1510-->
+   <send channel="channel-1">
+ <action>
+      <inc-counter name="transaction-counter"> </inc-counter>
+      <set-value name="transaction-id"
+                 format="$(transaction-counter)">
+		</set-value>
+  </action>
+    <message>
+
+       <![CDATA[MEGACO/1 Tau56
+                Transaction = 18571]]>
+
+		<![CDATA[Context = 2 {
+Modify = aaln/55 {
+Events = 159 {
+al/fl,
+al/on {
+strict=exact
+},
+ctyp/dtone
+},
+Signals,
+Media {
+Stream = 1 {
+LocalControl {
+Mode = SendReceive,
+tdmc/ec=on
+}
+}
+}
+}
+},
+Context = 2 {
+Modify = v/5000 {
+Signals
+}
+}
+}		]]>  		  		
+     </message>
+
+   </send>    
+   
+   
+<!--of 55 1511-->
+   <send channel="channel-1">
+ <action>
+      <inc-counter name="transaction-counter"> </inc-counter>
+      <set-value name="transaction-id"
+                 format="$(transaction-counter)">
+		</set-value>
+  </action>
+    <message>
+
+       <![CDATA[MEGACO/1 Tau56
+                Transaction = 18571]]>
+
+		<![CDATA[Context = 1 {
+Modify = aaln/54 {
+Events = 2393 {
+ctyp/dtone,
+al/fl,
+al/on {
+strict=exact
+}
+},
+Signals
+}
+}
+}]]>  		  		
+     </message>
+
+   </send>      
+   
+<wait-ms value="100000"> </wait-ms> 
+   
+</traffic>
+</scenario>

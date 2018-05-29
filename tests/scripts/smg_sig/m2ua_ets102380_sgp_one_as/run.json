@@ -1,0 +1,138 @@
+{
+  "preconf": [0, 1, 3],
+  "type": "sequential",
+  "test": [
+    {
+      "id": 0,
+      "name": "sigtran_m2ua_sgp_aspm_v01",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv01.xml",
+      "delay": 0
+    },
+    {
+      "id": 1,
+      "name": "sigtran_m2ua_sgp_aspm_v03",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv03.xml",
+      "delay": 5
+    },
+    {
+      "id": 2,
+      "name": "sigtran_m2ua_sgp_aspm_v04",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv04.xml",
+      "delay": 5
+    },
+    {
+      "id": 3,
+      "name": "sigtran_m2ua_sgp_aspm_v05",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv05.xml",
+      "delay": 5
+    },
+    {
+      "id": 4,
+      "name": "sigtran_m2ua_sgp_aspm_v06_and_07",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv06.xml",
+      "delay": 5
+    },
+    {
+      "id": 5,
+      "name": "sigtran_m2ua_sgp_aspm_v12",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv12.xml",
+      "delay": 5
+    },
+    {
+      "id": 6,
+      "name": "sigtran_m2ua_sgp_aspm_v13_14",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv13.xml",
+      "delay": 5,
+      "bug": 1
+    },
+    {
+      "id": 7,
+      "name": "sigtran_m2ua_sgp_aspm_v15",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv15.xml",
+      "delay": 0
+    },
+    {
+      "id": 8,
+      "name": "sigtran_m2ua_sgp_aspm_io01",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmio01.xml",
+      "delay": 0
+    },
+    {
+      "id": 9,
+      "name": "sigtran_m2ua_sgp_aspm_io02",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmio02.xml",
+      "delay": 0
+    },
+    {
+      "id": 10,
+      "name": "sigtran_m2ua_sgp_aspm_io03",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmio03.xml",
+      "delay": 5
+    },
+    {
+      "id": 11,
+      "name": "sigtran_m2ua_sgp_aspm_io04",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmio04.xml",
+      "delay": 5
+    },
+    {
+      "id": 12,
+      "name": "sigtran_m2ua_sgp_aspm_iv01",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmiv01.xml",
+      "delay": 0
+    },
+    {
+      "id": 13,
+      "name": "sigtran_m2ua_sgp_aspm_iv02",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmiv02.xml",
+      "delay": 0,
+      "bug": 1
+    },
+    {
+      "id": 14,
+      "name": "sigtran_m2ua_sgp_aspm_iv03",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmiv03.xml",
+      "delay": 0,
+      "bug": 1
+    },
+        {
+      "id": 15,
+      "name": "sigtran_m2ua_sgp_aspm_iv06",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmiv06.xml",
+      "delay": 5,
+      "bug": 1
+    },
+    {
+      "id": 16,
+      "name": "sigtran_m2ua_sgp_aspm_iv07",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmiv07.xml",
+      "delay": 0,
+      "bug": 1
+    },
+    {
+      "id": 17,
+      "name": "sigtran_m2ua_sgp_aspm_iv08",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmiv08.xml",
+      "delay": 0
+    }
+  ],
+  "postconf": [0, 1, 3]
+}

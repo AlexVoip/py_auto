@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE scenario SYSTEM "sigtran.dtd">
+
+<scenario  name="m2ua_sgp_aspm_v_09">
+	<sock_open local="0" remote="1" transport="sctp" proto="m2ua" />
+	<send socket="0" class="aspsm">
+		<![CDATA[
+		ASP UP(tag="asp identifier":[asp0])
+		]]>
+	</send>
+	<recv socket="0" class="aspsm">
+		<![CDATA[
+		ASP UP ACK()
+		]]>
+	</recv>
+	<recv socket="0" class="mgmt">
+		<![CDATA[
+		NTFY(tag="Status Type/Information":1/2)
+		]]>
+	</recv>	
+	<send socket="0" class="asptm">
+		<![CDATA[
+		ASP ACTIVE(tag="interface identifier (integer)":[iid2]; tag="traffic mode type":1)
+		]]>
+	</send>
+	<recv socket="0" class="asptm">
+		<![CDATA[
+		ASP ACTIVE ACK(tag="interface identifier (integer)":[iid2]; tag="traffic mode type":1)
+		]]>
+	</recv>
+	<recv socket="0" class="mgmt">
+		<![CDATA[
+		NTFY(tag="Status Type/Information":1/3)
+		]]>
+	</recv>	
+	<send socket="0" class="asptm">
+		<![CDATA[
+		ASP ACTIVE(tag="interface identifier (integer)":[iid3]; tag="traffic mode type":1)
+		]]>
+	</send>
+	<recv socket="0" class="asptm">
+		<![CDATA[
+		ASP ACTIVE ACK(tag="interface identifier (integer)":[iid3]; tag="traffic mode type":1)
+		]]>
+	</recv>
+	<recv socket="0" class="mgmt">
+		<![CDATA[
+		NTFY(tag="Status Type/Information":1/3)
+		]]>
+	</recv>		
+	<send socket="0" class="asptm">
+		<![CDATA[
+		ASP INACTIVE(tag="interface identifier (integer)":[iid2]; tag="info string":"return values")
+		]]>
+	</send>
+	<recv socket="0" class="asptm">
+		<![CDATA[
+		ASP INACTIVE ACK(tag="interface identifier (integer)":[iid2]; tag="info string":"return values")
+		]]>
+	</recv>
+	<recv socket="0" class="mgmt">
+		<![CDATA[
+		NTFY(tag="Status Type/Information":1/4)
+		]]>
+	</recv>	
+	<send socket="0" class="asptm">
+		<![CDATA[
+		ASP INACTIVE(tag="interface identifier (integer)":[iid3]; tag="info string":"return values")
+		]]>
+	</send>
+	<recv socket="0" class="asptm">
+		<![CDATA[
+		ASP INACTIVE ACK(tag="interface identifier (integer)":[iid3]; tag="info string":"return values")
+		]]>
+	</recv>
+	<recv socket="0" class="mgmt">
+		<![CDATA[
+		NTFY(tag="Status Type/Information":1/4)
+		]]>
+	</recv>	
+	<send socket="0" class="aspsm">
+		<![CDATA[
+		ASP DOWN()
+		]]>
+	</send>
+	<recv socket="0" class="aspsm">
+		<![CDATA[
+		ASP DOWN ACK()
+		]]>
+	</recv>	
+	<sock_close local="0" />
+</scenario>

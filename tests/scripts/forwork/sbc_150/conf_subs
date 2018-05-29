@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Путь к sipp
+SIPP_PATH=opt/sipp
+LIB_PATH=tests/lib
+SCRYPT_PATH=tests/scripts/sbc_150
+
+# Библиотеки
+source $LIB_PATH/screen_lib.sh
+source $LIB_PATH/create_lib.sh
+
+# Переменные командной строки
+#DEV_USER=
+#DEV_PASS=
+#DEV_DOMAIN=
+EXTER_IP_A=192.168.118.121
+EXTER_PORT_A=7060
+EXTER_IP_B=192.168.118.122
+EXTER_PORT_B=7062
+IP_A=192.168.118.10
+PORT_A=7060
+IP_B=192.168.118.10
+PORT_B=7067
+
+# Номера абонентов
+# Number A - SIP user
+# Number B - SIP user
+USER_A=200100
+USER_B=500100
+
+AUTH_A=200100
+DOM_A=voip.local
+
+AUTH_B=500100
+DOM_B=voip.local
+

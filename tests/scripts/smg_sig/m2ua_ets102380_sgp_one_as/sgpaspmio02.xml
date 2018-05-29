@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE scenario SYSTEM "sigtran.dtd">
+
+<scenario  name="m2ua_sgp_aspm_io_02">
+	<sock_open local="0" remote="1" transport="sctp" proto="m2ua" timeout="10"/>
+	<send socket="0" class="aspsm">
+		<![CDATA[
+		ASP UP(tag=17:[asp0]; tag="info string":"sigtran test")
+		]]>
+	</send>
+	<recv socket="0" class="aspsm">
+		<![CDATA[
+		ASP UP ACK(tag="info string":"sigtran test")
+		]]>
+	</recv>
+	<recv socket="0" class="mgmt">
+		<![CDATA[
+		NTFY(tag="Status Type/Information":1/2)
+		]]>
+	</recv>	
+	<send socket="0" class="aspsm">
+		<![CDATA[
+		IAM(par="cic":10; par="nature of connection indicators":0; par="forward call indicators":0x2000; par="calling party category":10; par="transmission medium requirement":3; par="called party number":[0x3, 0x10, (1, 0, 4)])
+		]]>
+	</send>
+	<recv socket="0">
+		<![CDATA[
+		NO MESSAGE()
+		]]>
+	</recv>	
+	<send socket="0" class="aspsm">
+		<![CDATA[
+		ASP DOWN(tag=4:"sigtran test")
+		]]>
+	</send>
+	<sock_close local="0" />
+</scenario>

@@ -1,0 +1,30 @@
+{
+  "preconf": [0, 1, 3],
+  "type": "sequential",
+  "test": [
+    {
+      "id": 0,
+      "name": "sigtran_m2ua_sgp_aspm_v02",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv02.xml",
+      "delay": 0,
+      "bug": 1
+    },
+    {
+      "id": 1,
+      "name": "sigtran_m2ua_sgp_aspm_v08_10",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv08.xml",
+      "delay": 5
+    },
+    {
+      "id": 4,
+      "name": "sigtran_m2ua_sgp_aspm_v09_11",
+      "dut_proto": ["m2ua"],
+      "script": "sgpaspmv09.xml",
+      "delay": 5,
+      "bug": 1
+    }
+  ],
+  "postconf": [0, 1, 3]
+}

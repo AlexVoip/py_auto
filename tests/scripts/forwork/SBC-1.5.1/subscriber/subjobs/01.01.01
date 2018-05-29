@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Регистрации
+# [Bug] 2 Contact в запросе, один из них *
+
+. ./conf
+
+UAC_XML=reg_bug_cont.xml
+
+cp tmp/$UAC_XML $WORKDIR/
+cp tmp/$USER_A-$USER_B.csv $WORKDIR/
+
+run_sipp $SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/$UAC_XML -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_A -s $USER_A -ap $AUTH_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p $PORT_A -recv_timeout 5s -timeout_error $SIPP_DEBUG
+
+exit `cat $WORKDIR/exit_code`

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# RFC 4028 session timer
+# [SBC] Контроль таймера, refresher=UAS, обе стороны принимают BYE
+
+. ./conf
+
+UAS_XML=uas_timer_tranzsbc_uas.xml
+UAC_XML=uac_timer_tranzsbc_uas.xml
+PCAP=mus_23s.pcap
+
+cp tmp/$UAC_XML $WORKDIR/
+cp tmp/$UAS_XML $WORKDIR/
+cp tmp/pcap/$PCAP $WORKDIR/
+cp tmp/$USER_A-$USER_B.csv $WORKDIR/
+
+run_sipp $SIPP_PATH/sipp $EXTER_IP_B:$EXTER_PORT_B -sf $WORKDIR/uas_timer_tranzsbc_uas.xml -mi $IP_B -m 1 -nd -i $IP_B -p $PORT_B -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+run_sipp $SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/uac_timer_tranzsbc_uas.xml -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_A -s $USER_A -ap $AUTH_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p $PORT_A -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+
+wait
+
+exit `cat $WORKDIR/exit_code`

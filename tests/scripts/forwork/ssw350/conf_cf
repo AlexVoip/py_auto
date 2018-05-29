@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Путь к sipp 
+SIPP_PATH=opt/sipp
+LIB_PATH=tests/lib
+SCRYPT_PATH=tests/script/ssw342
+
+# Библиотеки
+source $LIB_PATH/screen_lib.sh
+source $LIB_PATH/create_lib.sh
+
+# Переменные командной строки
+DEV_USER=admin
+DEV_PASS=password
+DEV_DOMAIN=voip.local
+EXTER_IP=192.168.118.52
+IP=192.168.118.10
+
+DS_NAME=ds1
+
+# Номера абонентов
+# Number 8 - SIP user
+# Number 4  - SIP dynamic user
+# Number 12 - SIP trunk user
+USER_MASS=("200110" "200111" "200112" "500100" "200113" "200114" "200115" "200500" "200116" "200117" "200118" "800100")
+USER_DOM_MASS=("voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "$EXTER_IP")
+#PORT_MASS=("5060" "5060" "5060" "5063" "5060" "5060" "5060" "5060" "5060" "5060" "5060" "6060")
+PORT_MASS=("5160" "5161" "5162" "5063" "5163" "5164" "5165" "5060" "5166" "5167" "5168" "6060")
+AUTH_MASS=("200110" "200111" "200112" "500100" "200113" "200114" "200115" "200500" "200116" "200117" "200118" "800100")
+PASS_MASS=("200110" "200111" "200112" "500100" "200113" "200114" "200115" "200500" "200116" "200117" "200118" "800100")
+
+CFB_KOD=22
+CFNR_KOD=27
+CFNR2_KOD=42
+CFOOS_KOD=24
+CFU_KOD=21
+CFU2_KOD=41
+CFT_KOD=28
+CFT_PRIZNAK=0
+
+# Not registered, Unallocated, No such number
+USER_NR=200101
+USER_UA=200102
+USER_NN=2000000

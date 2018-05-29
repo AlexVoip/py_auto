@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE scenario SYSTEM "sigtran.dtd">
+
+<scenario  name="m2ua_sgp_aspm_v_15">
+	<sock_open local="0" remote="1" transport="sctp" proto="m2ua" timeout="60"/>
+	<recv socket="0">
+		<![CDATA[
+		NO MESSAGE()
+		]]>
+	</recv>
+	<sock_close local="0" />
+</scenario>

@@ -1,0 +1,220 @@
+<!--
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+ (c)Copyright 2006 Hewlett-Packard Development Company, LP.
+
+-->
+
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<scenario>
+
+  <counter>
+    <counterdef name="transaction-counter" init="1000">
+    </counterdef>
+  </counter>
+
+<traffic>
+  <receive channel="channel-1">
+    <message>
+      <!-- header -->
+      <![CDATA[MEGACO/1 tau72m
+               Transaction=18571]]>
+      <!-- body -->
+      <![CDATA[Context = - {
+		ServiceChange = root {
+			Services {
+				Method = Restart,
+				Version = 1,
+				Reason = "901"
+			}
+		}
+	}
+}]]>
+     </message>
+     <action>
+       <!-- Store the transaction-id for following messages -->
+       <store name="TID" entity="transaction-id">
+         <regexp name="t-id"
+           expr="Transaction[[:space:]]*[=][[:space:]]*([0-9]+)"
+           nbexpr="2"
+           subexpr="1">
+         </regexp>
+       </store>
+     </action>
+   </receive>
+
+   <send channel="channel-1">
+     <action>
+       <restore name="TID" entity="transaction-id"></restore>
+     </action>
+     <message>
+       <!-- header -->
+       <![CDATA[MEGACO/1 TestMGCside
+                Reply=18571]]>
+       <!-- body -->
+       <![CDATA[ImmAckRequired,
+	Context = - {
+		ServiceChange = root
+	}
+}]]>
+     </message>
+   </send>
+
+   <receive channel="channel-1">
+     <message>
+       <![CDATA[MEGACO/1 tau72m 
+                TransactionResponseAck]]>
+       <![CDATA[18571
+]]>
+     </message>
+   </receive>
+
+
+<!------------------------------------------------------------------------------>
+
+  <send channel="channel-1">
+     <action>
+<!--        <inc-counter name="transaction-counter"></inc-counter> 
+        <set-value name="transaction-id" 
+          format="$(transaction-counter)"></set-value>
+-->
+<!--	<inc-var name="TID"></inc-var>-->
+       <restore name="TID" entity="transaction-id"></restore>  
+     </action>
+    <message>
+      <!-- header -->
+      <![CDATA[MEGACO/1 TestMGCside
+               Transaction=18571]]>
+      <!-- body -->
+      <![CDATA[Context = - {
+	Modify = p/0 {
+		Events = 2 {
+			al/of {
+				strict=exact
+			},
+			al/on {
+				strict=exact
+			}
+		},
+		Signals
+	}
+}
+}]]>
+     </message>
+<!--     <action>
+        Store the transaction-id for following messages 
+       <store name="TID" entity="transaction-id">
+         <regexp name="t-id"
+           expr="Transaction[[:space:]]*[=][[:space:]]*([0-9]+)"
+           nbexpr="2"
+           subexpr="1">
+         </regexp>
+       </store>
+     </action>-->
+   </send>
+
+   <receive channel="channel-1">
+     <action>
+ <inc-var name="TID"></inc-var>
+
+       <restore name="TID" entity="transaction-id"></restore>
+     </action>
+     <message>
+       <!-- header -->
+       <![CDATA[MEGACO/1 tau72m
+			Reply = 18571]]>
+       <!-- body -->
+       <![CDATA[Context = - {
+                Modify = p/0
+        }
+}]]>
+     </message>
+   </receive>
+
+<!---------------------------------------------------------------------------------->
+
+  <send channel="channel-1">
+     <action>
+<!--       <restore name="TID" entity="transaction-id"></restore> -->
+        <inc-counter name="transaction-counter"></inc-counter>
+        <set-value name="transaction-id" 
+          format="$(transaction-counter)"></set-value>
+
+     </action>
+    <message>
+      <!-- header -->
+      <![CDATA[MEGACO/1 TestMGCside
+               Transaction=18571]]>
+      <!-- body -->
+      <![CDATA[Context = - {
+                ServiceChange = root {
+                        Services {
+                                Method = Handoff,
+                                Version = 1,
+                                MgcIdToTry = 192.168.118.52,
+                                Reason = "903" }
+                }
+        }
+}]]>
+
+<!--
+  Method = Restart,
+                                Version = 1,
+                                Reason = "901"
+
+                                Method = Handoff,
+                                Version = 1,
+                                MgcIdToTry = 192.168.118.222,
+                                Reason = "903" 
+             -->
+
+
+     </message>
+   </send>
+
+   <receive channel="channel-1">
+<!--     <action>
+       <restore name="TID" entity="transaction-id"></restore>
+     </action>-->
+     <message>
+       <!-- header -->
+       <![CDATA[MEGACO/1 tau72m
+                Reply=18571]]>
+       <!-- body -->
+       <![CDATA[ImmAckRequired,
+        Context = - {
+                ServiceChange = root
+        }
+}]]>
+     </message>
+   </receive>
+
+   <send channel="channel-1">
+     <action>
+       <restore name="TID" entity="transaction-id"></restore>
+     </action>
+     <message>
+       <![CDATA[MEGACO/1 TestMGCside
+                TransactionResponseAck]]>
+       <![CDATA[18571
+]]>
+     </message>
+   </send>
+
+
+
+</traffic>
+</scenario>

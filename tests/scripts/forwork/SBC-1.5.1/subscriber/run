@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Тест SBC. Версия ПО 1.5.1
+
+. conf
+
+# Путь к sipp
+SIPP_PATH=$ROOTDIR/opt/sipp
+
+
+cp -r $SRCDIR/xml/* tmp/
+
+mkdir -p tmp/pcap
+cp -r $ROOTDIR/tests/audio/* tmp/pcap/
+
+( echo "SEQUENTIAL;"; echo "$USER_A;$DOM_A;$USER_B;" ) > tmp/$USER_A-$USER_B.csv
+( echo "SEQUENTIAL;"; echo "$USER_B;$DOM_A;$USER_A;" ) > tmp/$USER_B-$USER_A.csv
+( echo "SEQUENTIAL;"; echo "sip:$USER_A@$EXTER_IP_A:$EXTER_PORT_A" ) > tmp/sbc_routing.csv
+
+if [ "$DEBUG" != "no" ]; then
+    SIPP_DEBUG="-trace_msg -trace_err"
+fi
+
+export SIPP_PATH SIPP_DEBUG WRAPPER
+
+OIFS=$IFS
+IFS=$'\n'
+
+for subjob in `find $SRCDIR/subjobs -mindepth 1 -maxdepth 1 -type f | sort`; do
+    WORKDIR="tmp/$(basename $subjob)"
+    export WORKDIR
+    mkdir $WORKDIR
+    $subjob
+    exit_code=$?
+    if [ $exit_code -ne 0 ] && [ "$FORCE" != "yes" ]; then
+	break
+    fi
+done
+
+exit $exit_code

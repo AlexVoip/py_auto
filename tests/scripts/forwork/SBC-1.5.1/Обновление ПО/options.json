@@ -1,0 +1,32 @@
+{
+    "id": "SBC-1.5.1_FIRMWARE_UPGRADE",
+    "type": "test",
+    "description": "Обновление ПО на SBC-1.5.1 через telnet",
+    "options": [
+	{
+	    "id": "IMG_PATH",
+	    "description": "Путь к файлу с ПО",
+	    "value": "/tftpboot/sbc-1.5.1_firmware.bin"
+	},
+	{
+	    "id": "SBC_IP",
+	    "description": "IP-адрес SBC, на которую нужно залить ПО",
+	    "value": "192.168.118.90"
+	},
+	{
+	    "id": "SBC_USER",
+	    "description": "Имя пользователя telnet",
+	    "value": "admin"
+	},
+	{
+	    "id": "SBC_PASSWORD",
+	    "description": "Пароль telnet",
+	    "value": "rootpasswd"
+	},
+	{
+	    "id": "TFTP_SERVER",
+	    "description": "IP-адрес TFTP-сервера",
+	    "value": "192.168.118.56"
+	}
+    ]
+}

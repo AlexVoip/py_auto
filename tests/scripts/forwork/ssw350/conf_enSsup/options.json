@@ -1,0 +1,38 @@
+{
+    "options": [
+	{
+	    "id": "SIPP_PATH",
+	    "value": "opt/sipp"
+	},
+	{
+	    "id": "LIB_PATH",
+	    "value": "tests/lib"
+	},
+        {
+            "id": "SCRYPT_PATH",
+            "value": "tests/scripts/ssw350"
+        },
+        {
+            "id": "DEV_USER",
+            "value": "admin"
+        },
+        {
+            "id": "DEV_PASS",
+            "value": "password"
+        },
+        {
+            "id": "DEV_DOMAIN",
+            "value": "voip.local"
+        },
+        {
+            "id": "EXTER_IP",
+            "value": "192.168.118.52"
+        },
+        {
+            "id": "DS_NAME",
+            "value": "ds1"
+        }
+    ]
+}  
+
+

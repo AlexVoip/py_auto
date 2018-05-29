@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE scenario SYSTEM "sigtran.dtd">
+
+<scenario  name="m2ua_sgp_aspm_iv_08">
+	<sock_open local="0" remote="1" transport="sctp" proto="m2ua" />
+	<send socket="0" class="aspsm">
+		<![CDATA[
+		ASP UP(tag="asp identifier":224; tag="info string":"sigtran test")
+		]]>
+	</send>
+	<recv socket="0" class="mgmt">
+		<![CDATA[
+		ERR(tag="Error code":15)
+		]]>
+	</recv>	
+	<sock_close local="0" />
+</scenario>

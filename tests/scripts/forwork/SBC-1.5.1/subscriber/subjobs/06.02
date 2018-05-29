@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# ROUTING
+# Передача в INVITE маршрута route, маршрут на собственный домен, ожидание 480 в ответ
+
+. ./conf
+
+UAC_XML=uac_route_domain_480.xml
+
+cp tmp/$UAC_XML $WORKDIR/
+cp tmp/$USER_A-$USER_B.csv $WORKDIR/
+
+run_sipp $SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/uac_route_domain_480.xml -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_A -s $USER_A -ap $AUTH_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p $PORT_A -recv_timeout 5s -timeout_error $SIPP_DEBUG &
+
+wait
+
+exit `cat $WORKDIR/exit_code`

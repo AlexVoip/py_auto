@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Услуги ДВО и адаптации
+# Ответ 305 на INVITE (переадресация)
+
+. ./conf
+
+UAS_XML_1=uas.xml
+UAS_XML_2=uas_305.xml
+UAC_XML=uac_181m.xml
+
+cp tmp/$UAC_XML $WORKDIR/
+cp tmp/$UAS_XML_1 $WORKDIR/
+cp tmp/$UAS_XML_2 $WORKDIR/
+cp tmp/$USER_A-$USER_B.csv $WORKDIR/
+
+UAS1="$SIPP_PATH/sipp $EXTER_IP_B:$EXTER_PORT_B -sf $WORKDIR/uas.xml -mi $IP_B -m 1 -nd -i $IP_B -p 5070 -recv_timeout 5s -timeout_error $SIPP_DEBUG"
+UAS2="$SIPP_PATH/sipp $EXTER_IP_B:$EXTER_PORT_B -sf $WORKDIR/uas_305.xml -mi $IP_B -m 1 -nd -i $IP_B -p $PORT_B -recv_timeout 5s -timeout_error $SIPP_DEBUG"
+( echo $UAS1; echo $UAS2 ) > $WORKDIR/ugly_uas.sh
+
+run_sipp /bin/sh $WORKDIR/ugly_uas.sh &
+run_sipp $SIPP_PATH/sipp $EXTER_IP_A:$EXTER_PORT_A -sf $WORKDIR/uac_181m.xml -inf $WORKDIR/$USER_A-$USER_B.csv -mi $IP_A -s $USER_A -ap $AUTH_A -rtp_echo -l 1 -r 1 -m 1 -nd -i $IP_A -p $PORT_A -recv_timeout 10s -timeout_error $SIPP_DEBUG &
+
+wait
+
+exit `cat $WORKDIR/exit_code`

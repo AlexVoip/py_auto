@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<scenario name="uac">
+	<send>
+		<![CDATA[
+REGISTER sip:[remote_ip]:[remote_port] SIP/2.0
+Via: SIP/2.0/[transport] 192.168.77.254:5070;branch=[branch][pid]
+From: sipp <sip:[field0]@[field1]>;tag=[call_number]
+To: sut <sip:[field0]@[field1]>
+Call-ID: [call_id]
+User-Agent: SIP-Killer
+CSeq: 1 REGISTER
+Contact: <sip:[field0]@[local_ip]:[local_port]>;expires=3600
+Max-Forwards: 70
+Content-Length: 0
+
+]]>
+	</send>
+	<pause milliseconds="1000" />
+	<label id="1" />
+	<ResponseTimeRepartition value="10, 20, 30, 40, 50, 100, 150, 200" />
+	<CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000" />
+</scenario>

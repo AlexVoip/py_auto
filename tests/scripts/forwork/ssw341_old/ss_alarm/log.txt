@@ -1,0 +1,41 @@
+Starting alarm test ...
+[DEBUG]	Set permissions... ok
+[DEBUG]	Activate mgm... ok
+[DEBUG] test/alarm/calls.csv successfully created.
+[DEBUG]	=====TEST 1 START=====
+[DEBUG] Trying without 100rel:
+[DEBUG] Alarm One-time activate.
+[DEBUG] Test One-time success.
+[DEBUG] Trying with 100rel:
+[DEBUG] Alarm One-time activate.
+[DEBUG] Test One-time success.
+[DEBUG]	=====TEST 2 START=====
+[DEBUG] Trying without 100rel:
+[DEBUG] Alarm One-time on weekday activate.
+[DEBUG] Test One-time on weekday success.
+[DEBUG] Trying with 100rel:
+[DEBUG] Alarm One-time on weekday activate.
+[DEBUG] Test One-time on weekday success.
+[DEBUG]	=====TEST 3 START=====
+[DEBUG] Trying without 100rel:
+[DEBUG] Alarm Daily activate.
+[DEBUG] Test Daily success.
+[DEBUG] Alarm Daily deactivate.
+[DEBUG] Trying with 100rel:
+[DEBUG] Alarm Daily activate.
+[DEBUG] Test Daily success.
+[DEBUG] Alarm Daily deactivate.
+[DEBUG] =====TEST 4 START=====
+[DEBUG] Trying without 100rel:
+[DEBUG] Alarm Daily on weekdays activate.
+[DEBUG] Test Daily on weekdays success.
+[DEBUG] Alarm Daily on weekdays deactivate.
+[DEBUG] Trying with 100rel:
+[DEBUG] Alarm Daily on weekdays activate.
+[DEBUG] Test Daily on weekdays success.
+[DEBUG] Alarm Daily on weekdays deactivate.
+[DEBUG]	Deactivate mgm... ok
+[DEBUG]	Drop permissions... ok
+[DEBUG] Stop registrtion... ok
+[DEBUG] All csv files are removed.
+[DEBUG] Test Alarm success!

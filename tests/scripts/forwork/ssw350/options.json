@@ -1,0 +1,376 @@
+{
+    "options": [
+	{
+	    "id": "SIPP_PATH",
+	    "value": "opt/sipp"
+	},
+	{
+	    "id": "LIB_PATH",
+	    "value": "tests/lib"
+	},
+        {
+            "id": "SCRYPT_PATH",
+            "value": "tests/scripts/ssw350"
+        },
+        {
+            "id": "DEV_USER",
+            "value": "admin"
+        },
+        {
+            "id": "DEV_PASS",
+            "value": "password"
+        },
+        {
+            "id": "DEV_DOMAIN",
+            "value": "voip.local"
+        },
+        {
+            "id": "EXTER_IP",
+            "value": "192.168.118.52"
+        },
+        {
+            "id": "EXTER_PORT",
+            "value": "5060"
+        },
+        {
+            "id": "IP",
+            "value": "192.168.118.10"
+        },
+        {
+            "id": "DS_NAME",
+            "value": "ds1"
+        },
+        {
+            "id": "USER_A",
+            "value": "200500"
+        },
+        {
+            "id": "PASS_A",
+            "value": "$USER_A"
+        },
+        {
+            "id": "AUTH_A",
+            "value": "$USER_A"
+        },
+        {
+            "id": "DOM_A",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_A",
+            "value": "5060"
+        },
+        {
+            "id": "PIN_A",
+            "value": "1111"
+        },
+        {
+            "id": "USER_B",
+            "value": "500100"
+        },
+        {
+            "id": "PASS_B",
+            "value": "$USER_B"
+        },
+        {
+            "id": "AUTH_B",
+            "value": "$USER_B"
+        },
+        {
+            "id": "DOM_B",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_B",
+            "value": "5063"
+        },
+        {
+            "id": "PIN_B",
+            "value": "1111"
+        },
+        {
+            "id": "USER_C",
+            "value": "800100"
+        },
+        {
+            "id": "PASS_C",
+            "value": "$USER_C"
+        },
+        {
+            "id": "AUTH_C",
+            "value": "$USER_C"
+        },
+        {
+            "id": "DOM_C",
+            "value": "$EXTER_IP"
+        },
+        {
+            "id": "PORT_C",
+            "value": "5088"
+        },
+        {
+            "id": "USER_D",
+            "value": "800101"
+        },
+        {
+            "id": "PASS_D",
+            "value": "$USER_D"
+        },
+        {
+            "id": "AUTH_D",
+            "value": "$USER_D"
+        },
+        {
+            "id": "DOM_D",
+            "value": "$EXTER_IP"
+        },
+        {
+            "id": "PORT_D",
+            "value": "$PORT_C"
+        },
+        {
+            "id": "USER_NR",
+            "value": "200101"
+        },
+        {
+            "id": "PASS_NR",
+            "value": "$USER_NR"
+        },
+        {
+            "id": "AUTH_NR",
+            "value": "$USER_NR"
+        },
+        {
+            "id": "DOM_NR",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_NR",
+            "value": "5160"
+        },
+        {
+            "id": "USER_UA",
+            "value": "200102"
+        },
+        {
+            "id": "USER_NN",
+            "value": "2000000"
+        },
+        {
+            "id": "USER_A_NC",
+            "value": "20050"
+        },
+        {
+            "id": "USER_B_NC",
+            "value": "50010"
+        },
+        {
+            "id": "USER_C_MF",
+            "value": "400100"
+        },
+        {
+            "id": "USER_D_CF",
+            "value": "200111"
+        },
+        {
+            "id": "DOM_D_CF",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_D_CF",
+            "value": "5160"
+        },
+        {
+            "id": "PASS_D_CF",
+            "value": "$USER_D_CF"
+        },
+        {
+            "id": "AUTH_D_CF",
+            "value": "$USER_D_CF"
+        },
+        {
+            "id": "USER_C_PK",
+            "value": "200110"
+        },
+        {
+            "id": "DOM_C_PK",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_C_PK",
+            "value": "5160"
+        },
+        {
+            "id": "PASS_C_PK",
+            "value": "$USER_C_PK"
+        },
+        {
+            "id": "AUTH_C_PK",
+            "value": "$USER_C_PK"
+        },
+        {
+            "id": "USER_D_PK",
+            "value": "200111"
+        },
+        {
+            "id": "DOM_D_PK",
+            "value": "voip.local"
+        },
+        {
+            "id": "PORT_D_PK",
+            "value": "5160"
+        },
+        {
+            "id": "PASS_D_PK",
+            "value": "$USER_D_PK"
+        },
+        {
+            "id": "AUTH_D_PK",
+            "value": "$USER_D_PK"
+        },
+        {
+            "id": "USER_MASS",
+            "type": "basharray" 
+            "value": "("200100" "500100" "200110" "200111" "200112" "200113" "200114" "200115" "200116" "200117" "200118")"
+        },
+        {
+            "id": "USER_DOM_MASS",
+            "type": "basharray"
+            "value": "("voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local" "voip.local""
+        },
+        {
+            "id": "USER_PIN_MASS",
+            "type": "basharray"
+            "value": "("1111" "1111" "1111" "1111" "1111" "1111" "1111" "1111" "1111" "1111" "1111")"
+        },
+        {
+            "id": "PORT_MASS",
+            "type": "basharray"
+            "value": "("5060" "5060" "5060" "5060" "5060" "5060" "5060" "5060" "5060" "5060" "5060")"
+        },
+        {
+            "id": "AUTH_MASS",
+            "type": "basharray"
+            "value": "("200100" "500100" "200110" "200111" "200112" "200113" "200114" "200115" "200116" "200117" "200118")"
+        },
+        {
+            "id": "PASS_MASS",
+            "type": "basharray"
+            "value": "("200100" "500100" "200110" "200111" "200112" "200113" "200114" "200115" "200116" "200117" "200118")"
+        },
+        {
+            "id": "ABD_KOD",
+            "value": "51"
+        },
+        {
+            "id": "LNR_KOD",
+            "value": "77"
+        },
+        {
+            "id": "SCA_KOD",
+            "value": "60"
+        },
+        {
+            "id": "SCR_KOD",
+            "value": "61"
+        },
+        {
+            "id": "SCO_WH_KOD",
+            "value": "62"
+        },
+        {
+            "id": "SCO_BL_KOD",
+            "value": "63"
+        },
+        {
+            "id": "KOD_RFC",
+            "value": "64"
+        },
+        {
+            "id": "KOD_CFU",
+            "value": "21"
+        },
+        {
+            "id": "KOD_MYNUM",
+            "value": "123"
+        },
+        {
+            "id": "KOD_MCID",
+            "value": "36"
+        },
+        {
+            "id": "PK_KOD1",
+            "value": "07"
+        },
+        {
+            "id": "PK_KOD2",
+            "value": "08"
+        },
+        {
+            "id": "RBP_KOD",
+            "value": "34"
+        },
+        {
+            "id": "PEOC_KOD",
+            "value": "32"
+        },
+        {
+            "id": "MGM_KOD",
+            "value": "50"
+        },
+        {
+            "id": "DND_KOD",
+            "value": "26"
+        },
+        {
+            "id": "AUTORED_BUSY_KOD",
+            "value": "37"
+        },
+        {
+            "id": "AUTORED_ALL_KOD",
+            "value": "38"
+        },
+        {
+            "id": "CFOOS_KOD",
+            "value": "24"
+        },
+        {
+            "id": "AUTORED_KOD",
+            "value": "39"
+        },
+        {
+            "id": "KOD_ACB",
+            "value": "16"
+        },
+        {
+            "id": "KOD_CLIR",
+            "value": "31"
+        },
+        {
+            "id": "KOD_CLIP",
+            "value": "30"
+        },
+        {
+            "id": "KOD_CB",
+            "value": "40"
+        },
+        {
+            "id": "HOLD_KOD",
+            "value": "94"
+        },
+        {
+            "id": "CW_KOD",
+            "value": "43"
+        },
+        {
+            "id": "CT_KOD",
+            "value": "96"
+        },
+        {
+            "id": "THREEWAY_KOD",
+            "value": "95"
+        }
+    ]
+}  
+
+

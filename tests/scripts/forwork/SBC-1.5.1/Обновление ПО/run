@@ -1,0 +1,45 @@
+#!/bin/sh
+
+. ./conf
+
+wait_for_ping() {
+    local ret=2
+
+    for i in `seq 0 5 $2`; do
+
+        ping -W 5 -c 1 $1 &>/dev/null
+
+        if [ $? -eq 0 ]; then
+            ret=0
+            break
+        fi
+
+    done
+
+    return $ret
+}
+
+TFTP_DIR=/tftpboot
+
+TMP_DIR=$(basename $(mktemp --tmpdir=$TFTP_DIR -d))
+
+chmod a+rx $TFTP_DIR/$TMP_DIR
+
+IMG_FILENAME=$(basename $IMG_PATH)
+
+cp $IMG_PATH $TFTP_DIR/$TMP_DIR/$IMG_FILENAME
+
+upgrade.expect $SBC_USER \
+               $SBC_PASSWORD \
+               $SBC_IP \
+               $TFTP_SERVER \
+               $TMP_DIR/$IMG_FILENAME \
+               1> expect.log
+
+RETVAL=$?
+
+sleep 180
+
+rm -rf $TFTP_DIR/$TMP_DIR
+
+exit $RETVAL
